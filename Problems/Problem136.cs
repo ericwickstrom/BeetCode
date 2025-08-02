@@ -8,7 +8,7 @@ namespace BeetCode.Problems
         public override int Number => 136;
         public override string Title => "Single Number";
         public override string Difficulty => "Easy";
-        public override string Description => 
+        public override string Description =>
             "Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.\n\n" +
             "You must implement a solution with a linear runtime complexity and use only constant extra space.\n\n" +
             "Example 1:\n" +
@@ -29,28 +29,28 @@ namespace BeetCode.Problems
         {
             return new List<TestCase>
             {
-                new TestCase("Example 1", 
-                    new object[] { new int[] { 2, 2, 1 } }, 
-                    1),
-                
-                new TestCase("Example 2", 
-                    new object[] { new int[] { 4, 1, 2, 1, 2 } }, 
-                    4),
-                
-                new TestCase("Example 3", 
-                    new object[] { new int[] { 1 } }, 
+                new TestCase("Example 1",
+                    new object[] { new int[] { 2, 2, 1 } },
                     1),
 
-                new TestCase("Negative numbers", 
-                    new object[] { new int[] { -1, -1, 0, 0, 2 } }, 
+                new TestCase("Example 2",
+                    new object[] { new int[] { 4, 1, 2, 1, 2 } },
+                    4),
+
+                new TestCase("Example 3",
+                    new object[] { new int[] { 1 } },
+                    1),
+
+                new TestCase("Negative numbers",
+                    new object[] { new int[] { -1, -1, 0, 0, 2 } },
                     2),
 
-                new TestCase("Larger array", 
-                    new object[] { new int[] { 5, 7, 5, 4, 7, 4, 3 } }, 
+                new TestCase("Larger array",
+                    new object[] { new int[] { 5, 7, 5, 4, 7, 4, 3 } },
                     3),
 
-                new TestCase("Single negative", 
-                    new object[] { new int[] { 10, 10, -5 } }, 
+                new TestCase("Single negative",
+                    new object[] { new int[] { 10, 10, -5 } },
                     -5)
             };
         }
@@ -79,5 +79,18 @@ namespace BeetCode.Problems
             var val = numDict.Where(w => w.Value == 1).FirstOrDefault();
             return val.Key;
         }
+
+        // optimal solution
+        /*
+        public int SingleNumber(int[] nums)
+        {
+            int result = 0;
+            foreach (int num in nums)
+            {
+                result ^= num;
+            }
+            return result;
+        }
+        */
     }
 }
