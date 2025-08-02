@@ -1,5 +1,6 @@
 using BeetCode.Framework;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace BeetCode.Problems
 {
@@ -28,37 +29,41 @@ namespace BeetCode.Problems
         {
             return new List<TestCase>
             {
-                new TestCase("Example 1", 
-                    new object[] { "abcd", "abcde" }, 
+                new TestCase("Example 1",
+                    new object[] { "abcd", "abcde" },
                     'e'),
-                
-                new TestCase("Example 2", 
-                    new object[] { "", "y" }, 
+
+                new TestCase("Example 2",
+                    new object[] { "", "y" },
                     'y'),
-                
-                new TestCase("Added at beginning", 
-                    new object[] { "abc", "xabc" }, 
+
+                new TestCase("Added at beginning",
+                    new object[] { "abc", "xabc" },
                     'x'),
 
-                new TestCase("Added in middle", 
-                    new object[] { "ac", "abc" }, 
+                new TestCase("Added in middle",
+                    new object[] { "ac", "abc" },
                     'b'),
 
-                new TestCase("Single character", 
-                    new object[] { "a", "aa" }, 
+                new TestCase("Single character",
+                    new object[] { "a", "aa" },
                     'a'),
 
-                new TestCase("Shuffled order", 
-                    new object[] { "abc", "bcad" }, 
+                new TestCase("Shuffled order",
+                    new object[] { "abc", "bcad" },
                     'd'),
 
-                new TestCase("Complex shuffled", 
-                    new object[] { "hello", "ohllex" }, 
+                new TestCase("Complex shuffled",
+                    new object[] { "hello", "ohllex" },
                     'x'),
 
+                new TestCase("Repeated characters",
+                    new object[] { "aab", "aabb" },
+                    'b'),
+                    
                 new TestCase("Repeated characters", 
-                    new object[] { "aab", "aabb" }, 
-                    'b')
+                    new object[] { "abcd", "abcde" }, 
+                    'e')
             };
         }
 
@@ -70,8 +75,23 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public char FindTheDifference(string s, string t)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            int[] letters = new int[26];
+
+            foreach (char c in s)
+            {
+                var index = c - 'a';
+                letters[index]++;
+            }
+
+            foreach (char c in t)
+            {
+                var index = c- 'a';
+                if (letters[index] == 0)
+                    return c;
+                letters[index]--;
+            }
+
+            return ' '; // shouldn't reach here
         }
     }
 }
