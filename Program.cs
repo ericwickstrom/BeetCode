@@ -91,18 +91,32 @@ namespace BeetCode
         static void ListProblems()
         {
             Console.WriteLine("Available Problems:");
-            Console.WriteLine(new string('-', 50));
+            Console.WriteLine(new string('-', 60));
+            Console.WriteLine($"{"#",-4} {"Title",-30} {"Difficulty",-10} {"Status",-8}");
+            Console.WriteLine(new string('-', 60));
 
             var problemTypes = Assembly.GetExecutingAssembly()
                 .GetTypes()
                 .Where(t => t.IsSubclassOf(typeof(Problem)) && !t.IsAbstract)
                 .OrderBy(t => t.Name);
 
+            int totalProblems = 0;
+            int solvedProblems = 0;
+
             foreach (var type in problemTypes)
             {
                 var problem = (Problem)Activator.CreateInstance(type);
-                Console.WriteLine($"{problem.Number:D3}: {problem.Title} ({problem.Difficulty})");
+                bool isSolved = problem.IsSolved();
+                string status = isSolved ? "✅ SOLVED" : "❌ TODO";
+                
+                Console.WriteLine($"{problem.Number:D3}  {problem.Title,-30} {problem.Difficulty,-10} {status}");
+                
+                totalProblems++;
+                if (isSolved) solvedProblems++;
             }
+
+            Console.WriteLine(new string('-', 60));
+            Console.WriteLine($"Progress: {solvedProblems}/{totalProblems} problems solved ({(double)solvedProblems/totalProblems*100:F1}%)");
         }
 
         static Problem LoadProblem(int problemNumber)

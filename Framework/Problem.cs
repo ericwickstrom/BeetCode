@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BeetCode.Framework
 {
@@ -19,6 +20,45 @@ namespace BeetCode.Framework
             Console.WriteLine();
             Console.WriteLine(Description);
             Console.WriteLine();
+        }
+
+        public bool IsSolved()
+        {
+            try
+            {
+                var testCases = GetTestCases();
+                if (testCases.Count == 0) return false;
+
+                foreach (var testCase in testCases)
+                {
+                    var result = ExecuteSolution(testCase.Input);
+                    bool success = AreEqual(result, testCase.Expected);
+                    if (!success) return false;
+                }
+                return true;
+            }
+            catch (NotImplementedException)
+            {
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private bool AreEqual(object actual, object expected)
+        {
+            if (actual == null && expected == null) return true;
+            if (actual == null || expected == null) return false;
+
+            // Handle arrays
+            if (actual is Array actualArray && expected is Array expectedArray)
+            {
+                return actualArray.Cast<object>().SequenceEqual(expectedArray.Cast<object>());
+            }
+
+            return actual.Equals(expected);
         }
     }
 }
