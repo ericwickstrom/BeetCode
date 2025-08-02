@@ -70,9 +70,17 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public void ReverseString(char[] s)
         {
-            // TODO: Implement your solution
-            // Remember: modify the array in-place with O(1) extra memory
-            throw new NotImplementedException();
+            char temp = ' ';
+            int pointer1 = 0;
+            int pointer2 = s.Length - 1;
+            while (pointer1 < pointer2)
+            {
+                temp = s[pointer1];
+                s[pointer1] = s[pointer2];
+                s[pointer2] = temp;
+                pointer1++;
+                pointer2--;       
+            }
         }
     }
 }
