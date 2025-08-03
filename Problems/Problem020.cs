@@ -89,8 +89,33 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsValid(string s)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            var stack = new Stack<char>();
+            foreach (char c in s)
+            {
+                if (c == '[' || c == '(' || c == '{')
+                {
+                    stack.Push(c);
+                }
+                else
+                {
+                    if (stack.Count == 0) return false;
+                    var stack_c = stack.Pop();
+                    switch (c)
+                    {
+                        case (']'):
+                            if (stack_c != '[') return false;
+                            break;
+                        case (')'):
+                            if (stack_c != '(') return false;
+                            break;
+                        case ('}'):
+                            if (stack_c != '{') return false;
+                            break;
+                    }
+                }
+            }
+            if (stack.Count > 0) return false;
+            return true;
         }
     }
 }
