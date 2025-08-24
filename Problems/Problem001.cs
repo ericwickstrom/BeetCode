@@ -1,5 +1,6 @@
 using BeetCode.Framework;
 using System.Collections.Generic;
+using System.Data;
 
 namespace BeetCode.Problems
 {
@@ -49,22 +50,20 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int[] TwoSum(int[] nums, int target)
         {
-            // TODO: Implement your solution
-            Dictionary<int, int> map = new Dictionary<int, int>();
+            Dictionary<int, int> dict = new Dictionary<int, int>();
             for (int i = 0; i < nums.Length; i++)
             {
-                int otherNum = target - nums[i];
-                if (map.TryGetValue(otherNum, out int value))
+                var val = target - nums[i];
+                if (dict.TryGetValue(val, out int index))
                 {
-                    return new int[] { value, i };
+                    return new int[] { index, i };
                 }
                 else
                 {
-                    map[nums[i]] = i;
+                    dict.Add(nums[i], i);
                 }
             }
-
-            return new int[] { }; throw new NotImplementedException();
+            return new int[] { }; 
         }
     }
 }
