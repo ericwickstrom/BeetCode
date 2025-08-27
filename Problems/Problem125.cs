@@ -87,16 +87,6 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsPalindrome(string s)
         {
-            // TODO: Implement the solution
-            // Hint: Use two pointers approach
-            // 1. One pointer at the beginning (left) and one at the end (right)
-            // 2. Skip non-alphanumeric characters
-            // 3. Compare characters in lowercase
-            // 4. Move pointers toward each other
-
-            // Useful C# methods:
-            // char.IsLetterOrDigit(c) - checks if character is alphanumeric
-            // char.ToLower(c) - converts character to lowercase
             if (s.Length == 1) return true;
 
             int left = 0;
