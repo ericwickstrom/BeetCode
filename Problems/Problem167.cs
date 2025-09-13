@@ -67,27 +67,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int[] TwoSum(int[] numbers, int target)
         {
-            int[] vals = new int[2];
-            int left = 0;
-            int right = numbers.Length - 1;
-            while (left < right)
-            {
-                int val = numbers[left] + numbers[right];
-                if (val == target)
-                {
-                    vals[0] = left + 1;
-                    vals[1] = right + 1;
-                }
-                if (val > target)
-                {
-                    right--;
-                }
-                else
-                {
-                    left++;
-                }
-            }
-            return vals;
+            throw new NotImplementedException();
         }
     }
 }

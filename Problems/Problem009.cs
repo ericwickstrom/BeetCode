@@ -70,17 +70,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsPalindrome(int x)
         {
-            if (x < 0) return false;
-            var numberString = x.ToString();
-            int start = 0;
-            int end = numberString.Length - 1;
-            while (start < end)
-            {
-                if (numberString[start] != numberString[end]) return false;
-                start++;
-                end--;
-            }
-            return true;
+            throw new NotImplementedException();
         }
     }
 }

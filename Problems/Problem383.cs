@@ -82,49 +82,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool CanConstruct(string ransomNote, string magazine)
         {
-            var magDict = new Dictionary<char, int>();
-            var noteDict = new Dictionary<char, int>();
-
-            for (int i = 0; i < ransomNote.Length; i++)
-            {
-                if (noteDict.TryGetValue(ransomNote[i], out int value))
-                {
-                    noteDict[ransomNote[i]] = ++value;
-                }
-                else
-                {
-                    noteDict.Add(ransomNote[i], 1);
-                }
-            }
-
-            for (int i = 0; i < magazine.Length; i++)
-            {
-                if (magDict.TryGetValue(magazine[i], out int value))
-                {
-                    magDict[magazine[i]] = ++value;
-                }
-                else
-                {
-                    magDict.Add(magazine[i], 1);
-                }
-            }
-
-            foreach (var key in noteDict.Keys)
-            {
-                if (magDict.TryGetValue(key, out int magVal))
-                {
-                    if (magVal < noteDict[key])
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    return false;
-                }
-            }
-
-            return true;
+            throw new NotImplementedException();
         }
     }
 }

@@ -63,34 +63,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int SingleNumber(int[] nums)
         {
-            var numDict = new Dictionary<int, int>();
-            foreach (var num in nums)
-            {
-                // check if dict has it
-                if (numDict.TryGetValue(num, out int value))
-                {
-                    numDict[num] = value + 1;
-                }
-                else
-                {
-                    numDict.Add(num, 1);
-                }
-            }
-            var val = numDict.Where(w => w.Value == 1).FirstOrDefault();
-            return val.Key;
+            throw new NotImplementedException();
         }
-
-        // optimal solution
-        /*
-        public int SingleNumber(int[] nums)
-        {
-            int result = 0;
-            foreach (int num in nums)
-            {
-                result ^= num;
-            }
-            return result;
-        }
-        */
     }
 }

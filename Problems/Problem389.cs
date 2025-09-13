@@ -75,23 +75,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public char FindTheDifference(string s, string t)
         {
-            int[] letters = new int[26];
-
-            foreach (char c in s)
-            {
-                var index = c - 'a';
-                letters[index]++;
-            }
-
-            foreach (char c in t)
-            {
-                var index = c- 'a';
-                if (letters[index] == 0)
-                    return c;
-                letters[index]--;
-            }
-
-            return ' '; // shouldn't reach here
+            throw new NotImplementedException();
         }
     }
 }

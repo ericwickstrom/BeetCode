@@ -89,7 +89,8 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsValid(string s)
         {
-            throw new Exception("ope");
+            throw new NotImplementedException();
+            return false;
         }
     }
 }

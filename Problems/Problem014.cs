@@ -85,21 +85,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public string LongestCommonPrefix(string[] strs)
         {
-            if (strs.Length == 1) return strs[0];
-            var list = new List<char>();
-            var pointer = 0;
-            var end = false;
-            while (!end)
-            {
-                char c = strs[0][pointer];
-                for (int i = 1; i < strs.Length; i++)
-                {
-
-                }
-                pointer++;
-            }
-
-            return list.ToString();
+            throw new NotImplementedException();
         }
     }
 }

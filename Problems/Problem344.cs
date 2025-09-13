@@ -70,17 +70,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public void ReverseString(char[] s)
         {
-            char temp = ' ';
-            int pointer1 = 0;
-            int pointer2 = s.Length - 1;
-            while (pointer1 < pointer2)
-            {
-                temp = s[pointer1];
-                s[pointer1] = s[pointer2];
-                s[pointer2] = temp;
-                pointer1++;
-                pointer2--;       
-            }
+            throw new NotImplementedException();
         }
     }
 }

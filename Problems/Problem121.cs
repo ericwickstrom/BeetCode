@@ -79,28 +79,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int MaxProfit(int[] prices)
         {
-            // TODO: Implement the solution
-            // Hint: Track the minimum price seen so far and maximum profit
-            // As you iterate through prices:
-            // 1. Update minimum price if current price is lower
-            // 2. Calculate profit if selling at current price
-            // 3. Update maximum profit if current profit is higher
-            // This is a single-pass O(n) solution!
-
-            int low = int.MaxValue;
-            int profit = int.MinValue;
-
-            foreach (int price in prices)
-            {
-                if (price < low)
-                    low = price;
-                int newProfit = price - low;
-                if (newProfit > profit)
-                    profit = newProfit;
-            }
-
-            if (profit < 0) return 0;
-            return profit;
+            throw new NotImplementedException();
         }
     }
 }
