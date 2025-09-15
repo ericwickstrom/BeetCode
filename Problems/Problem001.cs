@@ -38,7 +38,12 @@ namespace BeetCode.Problems
 
                 new TestCase("Example 3",
                     new object[] { new int[] {3, 3}, 6 },
-                    new int[] {0, 1})
+                    new int[] {0, 1}),
+
+                new TestCase("Includes negative number",
+                new object[] { new int[]{-3,4,3,90},0},
+                    new int []{0,2})
+                
             };
         }
 
@@ -50,7 +55,21 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int[] TwoSum(int[] nums, int target)
         {
-            throw new NotImplementedException();
+            if (nums.Length == 2) return new int[] { 0, 1 }; 
+            Dictionary<int, int> dict = new Dictionary<int, int>();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int key = target - nums[i];
+                if (dict.TryGetValue(key, out int position))
+                {
+                    return new int[] { position, i };
+                }
+                else
+                {
+                    dict.TryAdd(nums[i], i);
+                }
+            }
+            return new int[0];
         }
     }
 }
