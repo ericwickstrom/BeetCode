@@ -90,7 +90,6 @@ namespace BeetCode.Problems
         public bool IsValid(string s)
         {
             throw new NotImplementedException();
-            return false;
         }
     }
 }

@@ -42,8 +42,12 @@ namespace BeetCode.Problems
 
                 new TestCase("Includes negative number",
                 new object[] { new int[]{-3,4,3,90},0},
-                    new int []{0,2})
-                
+                    new int []{0,2}),
+
+                new TestCase("Duplicate numbers (solutions that are not n^2)",
+                new object[] { new int[]{1,1,1,1,1,4,1,1,1,1,1,7,1,1,1,1,1},11},
+                    new int []{5,11}),
+
             };
         }
 
@@ -55,18 +59,20 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int[] TwoSum(int[] nums, int target)
         {
-            if (nums.Length == 2) return new int[] { 0, 1 }; 
-            Dictionary<int, int> dict = new Dictionary<int, int>();
+            Dictionary<int, int> map = new Dictionary<int, int>();
             for (int i = 0; i < nums.Length; i++)
             {
-                int key = target - nums[i];
-                if (dict.TryGetValue(key, out int position))
+                int val = target - nums[i];
+                if (map.TryGetValue(val, out int key))
                 {
-                    return new int[] { position, i };
+                    return new int[] { key, i };
                 }
                 else
                 {
-                    dict.TryAdd(nums[i], i);
+                    if (!map.ContainsKey(nums[i]))
+                    {
+                        map.Add(nums[i], i);
+                    }
                 }
             }
             return new int[0];

@@ -93,6 +93,12 @@ namespace BeetCode.Framework
             if (actual == null && expected == null) return true;
             if (actual == null || expected == null) return false;
 
+            // Handle ListNode comparisons
+            if (actual is ListNode actualList && expected is ListNode expectedList)
+            {
+                return AreLinkedListsEqual(actualList, expectedList);
+            }
+
             // Handle arrays
             if (actual is Array actualArray && expected is Array expectedArray)
             {
@@ -102,9 +108,29 @@ namespace BeetCode.Framework
             return actual.Equals(expected);
         }
 
+        private static bool AreLinkedListsEqual(ListNode list1, ListNode list2)
+        {
+            Console.WriteLine("Checking linked lists");
+            while (list1 != null && list2 != null)
+            {
+                if (list1.val != list2.val)
+                    return false;
+                list1 = list1.next;
+                list2 = list2.next;
+            }
+            
+            return list1 == null && list2 == null;
+        }
+
         private static string FormatResult(object result)
         {
             if (result == null) return "null";
+            
+            // Handle ListNode display
+            if (result is ListNode listNode)
+            {
+                return FormatLinkedList(listNode);
+            }
             
             if (result is Array array)
             {
@@ -112,6 +138,22 @@ namespace BeetCode.Framework
             }
 
             return result.ToString();
+        }
+
+        private static string FormatLinkedList(ListNode head)
+        {
+            if (head == null) return "[]";
+            
+            List<int> values = new List<int>();
+            ListNode current = head;
+            
+            while (current != null)
+            {
+                values.Add(current.val);
+                current = current.next;
+            }
+            
+            return "[" + string.Join(", ", values) + "]";
         }
 
         private static string FormatTime(TimeSpan elapsed)

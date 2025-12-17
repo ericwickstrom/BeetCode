@@ -79,18 +79,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int MaxProfit(int[] prices)
         {
-            int buy = int.MaxValue;
-            int profit = 0;
-
-            foreach (var price in prices)
-            {
-                if (price < buy)
-                    buy = price;
-                int p = price - buy;
-                if (p > profit)
-                    profit = p;
-            }
-            return profit;
+            throw new NotImplementedException();
         }
     }
 }

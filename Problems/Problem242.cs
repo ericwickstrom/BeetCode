@@ -73,39 +73,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsAnagram(string s, string t)
         {
-            Dictionary<char, int> dict = new Dictionary<char, int>();
-
-            foreach (char letter in s)
-            {
-                if (dict.TryGetValue(letter, out int count))
-                {
-                    dict[letter] = count + 1;
-                }
-                else
-                {
-                    dict.Add(letter, 1);
-                }
-            }
-
-            foreach (char letter in t)
-            {
-                if (dict.TryGetValue(letter, out int count))
-                {
-                    dict[letter] = count - 1;
-                    if (dict[letter] < 0) return false;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-
-            foreach (var key in dict.Keys)
-            {
-                if (dict[key] != 0) return false;
-            }
-
-            return true;
+            throw new NotImplementedException();
         }
     }
 }
