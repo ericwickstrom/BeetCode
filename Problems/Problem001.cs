@@ -69,10 +69,6 @@ namespace BeetCode.Problems
                 }
                 else
                 {
-                    // if (!map.ContainsKey(nums[i]))
-                    // {
-                    //     map.Add(nums[i], i);
-                    // }
                     map[nums[i]] = i;
                 }
             }
