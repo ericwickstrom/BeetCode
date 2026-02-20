@@ -85,6 +85,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public string LongestCommonPrefix(string[] strs)
         {
+            // TODO: Implement your solution
             throw new NotImplementedException();
         }
     }

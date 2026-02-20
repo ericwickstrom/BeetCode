@@ -109,6 +109,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool HasCycle(ListNode head)
         {
+            // TODO: Implement your solution
             throw new NotImplementedException();
         }
     }

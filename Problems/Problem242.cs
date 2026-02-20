@@ -74,33 +74,8 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsAnagram(string s, string t)
         {
-            if(s == null || t == null) return false;
-            if(s.Length != t.Length) return false;
-
-            Dictionary<char, int> map = new Dictionary<char, int>();
-            foreach(char c in s)
-            {
-                map[c] = map.GetValueOrDefault(c,0) + 1;
-            }
-
-            foreach(char c in t)
-            {
-                if(map.TryGetValue(c, out int val))
-                {
-                    map[c] = val - 1;
-                }
-                else
-                {
-                    return false;
-                }   
-            }
-
-            foreach(char key in map.Keys)
-            {
-                if(map[key] != 0) return false;
-            }
-
-            return true;
+            // TODO: Implement your solution
+            throw new NotImplementedException();
         }
     }
 }

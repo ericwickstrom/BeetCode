@@ -82,6 +82,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool CanConstruct(string ransomNote, string magazine)
         {
+            // TODO: Implement your solution
             throw new NotImplementedException();
         }
     }

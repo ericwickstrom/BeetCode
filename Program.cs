@@ -51,6 +51,23 @@ namespace BeetCode
                     ListProblems();
                     break;
 
+                case "reset":
+                    if (args.Length < 2)
+                    {
+                        // No number provided — reset ALL problems
+                        ResetAllProblems();
+                    }
+                    else if (int.TryParse(args[1], out int resetProblemNumber))
+                    {
+                        ResetOneProblem(resetProblemNumber);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Usage: dotnet run -- reset [problem_number]");
+                        Console.WriteLine("  Omit problem_number to reset ALL problems.");
+                    }
+                    break;
+
                 case "help":
                     ShowHelp();
                     break;
@@ -61,6 +78,93 @@ namespace BeetCode
                     break;
             }
         }
+
+        // -------------------------------------------------------------------------
+        // Reset commands
+        // -------------------------------------------------------------------------
+
+        static void ResetOneProblem(int number)
+        {
+            string problemsDir = ResetHelper.FindProblemsDirectory();
+            if (problemsDir == null)
+            {
+                Console.WriteLine("Could not locate the Problems directory.");
+                return;
+            }
+
+            string filePath = ResetHelper.GetProblemFilePath(problemsDir, number);
+            if (!System.IO.File.Exists(filePath))
+            {
+                Console.WriteLine($"Problem {number} file not found: {filePath}");
+                return;
+            }
+
+            Console.Write($"Reset Problem {number:D3}? This will erase your solution. [y/N] ");
+            string answer = Console.ReadLine()?.Trim().ToLower();
+            if (answer != "y" && answer != "yes")
+            {
+                Console.WriteLine("Cancelled.");
+                return;
+            }
+
+            bool ok = ResetHelper.ResetProblemFile(filePath);
+            Console.WriteLine(ok
+                ? $"✅ Problem {number:D3} has been reset."
+                : $"❌ Could not reset Problem {number:D3} — check that the file contains '// YOUR SOLUTION GOES HERE'.");
+        }
+
+        static void ResetAllProblems()
+        {
+            string problemsDir = ResetHelper.FindProblemsDirectory();
+            if (problemsDir == null)
+            {
+                Console.WriteLine("Could not locate the Problems directory.");
+                return;
+            }
+
+            var files = System.IO.Directory.GetFiles(problemsDir, "Problem*.cs");
+            if (files.Length == 0)
+            {
+                Console.WriteLine("No problem files found.");
+                return;
+            }
+
+            Console.WriteLine($"This will reset ALL {files.Length} problem solutions back to NotImplementedException.");
+            Console.Write("Are you sure? [y/N] ");
+            string answer = Console.ReadLine()?.Trim().ToLower();
+            if (answer != "y" && answer != "yes")
+            {
+                Console.WriteLine("Cancelled.");
+                return;
+            }
+
+            Console.WriteLine();
+            int successCount = 0;
+            int skipCount = 0;
+
+            foreach (var file in files.OrderBy(f => f))
+            {
+                string name = System.IO.Path.GetFileNameWithoutExtension(file);
+                bool ok = ResetHelper.ResetProblemFile(file);
+                if (ok)
+                {
+                    Console.WriteLine($"  ✅ {name} reset");
+                    successCount++;
+                }
+                else
+                {
+                    Console.WriteLine($"  ⚠️  {name} skipped (no solution marker found)");
+                    skipCount++;
+                }
+            }
+
+            Console.WriteLine();
+            Console.WriteLine($"Done. {successCount} reset, {skipCount} skipped.");
+        }
+
+        // -------------------------------------------------------------------------
+        // Existing commands (unchanged)
+        // -------------------------------------------------------------------------
 
         static void RunTest(int problemNumber)
         {
@@ -146,6 +250,8 @@ namespace BeetCode
             Console.WriteLine("  run <number>     Show problem info and run tests");
             Console.WriteLine("  info <number>    Show problem description");
             Console.WriteLine("  list             List all available problems");
+            Console.WriteLine("  reset <number>   Reset one problem's solution");
+            Console.WriteLine("  reset            Reset ALL problem solutions");
             Console.WriteLine("  help             Show this help message");
             Console.WriteLine();
             Console.WriteLine("Examples:");
@@ -153,6 +259,8 @@ namespace BeetCode
             Console.WriteLine("  dotnet run -- run 1       # Show info and test Problem 1");
             Console.WriteLine("  dotnet run -- info 1      # Show Problem 1 description");
             Console.WriteLine("  dotnet run -- list        # List all problems");
+            Console.WriteLine("  dotnet run -- reset 1     # Reset Problem 1 solution only");
+            Console.WriteLine("  dotnet run -- reset       # Reset ALL solutions (prompts first)");
         }
     }
 }
