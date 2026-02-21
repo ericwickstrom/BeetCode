@@ -65,7 +65,7 @@ namespace BeetCode.Problems
 
                 new TestCase("Long common prefix", 
                     new object[] { new string[] { "interview", "internet", "internal" } }, 
-                    "inte"),
+                    "inter"),
 
                 new TestCase("Single character strings", 
                     new object[] { new string[] { "a", "a", "a" } }, 
@@ -73,7 +73,11 @@ namespace BeetCode.Problems
 
                 new TestCase("Mixed case sensitivity", 
                     new object[] { new string[] { "abcd", "abce", "abcf" } }, 
-                    "abc")
+                    "abc"),
+
+                new TestCase("Unequal length", 
+                    new object[] { new string[] { "ab", "a" } }, 
+                    "a")
             };
         }
 
@@ -85,8 +89,34 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public string LongestCommonPrefix(string[] strs)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            if(strs.Length == 0) return "";
+            foreach(string s in strs)
+            {
+                if(s == null || s.Length == 0) return "";
+            }
+
+            int length = 0;
+            bool equal = true;
+
+            while (equal && length < strs[0].Length)
+            {
+                for(int i = 1; i < strs.Length; i++)
+                {
+                    if(length >= strs[i].Length)
+                    {
+                        equal = false;
+                        break;
+                    }
+                    if(strs[0][length] != strs[i][length])
+                    {
+                        equal = false;
+                        break;
+                    }
+                }
+                if(equal) length++;
+            }
+            
+            return strs[0].Substring(0,length);
         }
     }
 }
