@@ -63,6 +63,7 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool ContainsDuplicate(int[] nums)
         {
+            if(nums == null || nums.Length == 0) return false;
             HashSet<int> set = new HashSet<int>();
             foreach(var num in nums)
             {
