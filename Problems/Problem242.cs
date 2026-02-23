@@ -1,5 +1,6 @@
 using BeetCode.Framework;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.Marshalling;
 using System.Threading.Channels;
 
 namespace BeetCode.Problems
@@ -74,8 +75,21 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsAnagram(string s, string t)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+
+            if (s.Length != t.Length) return false;
+
+            int[] counts = new int[26];
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                counts[s[i] - 'a']++;
+                counts[t[i] - 'a']--;
+            }
+
+            foreach (int count in counts)
+                if (count != 0) return false;
+
+            return true;
         }
     }
 }
