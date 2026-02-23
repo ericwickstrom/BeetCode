@@ -87,8 +87,24 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsPalindrome(string s)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            if(s == null || s.Length == 0) return true;
+            int l = 0;
+            int r = s.Length - 1;
+
+            while(l < r)
+            {
+                if(!char.IsLetterOrDigit(s[l])) l++;
+                if(!char.IsLetterOrDigit(s[r])) r--;
+
+                if(char.IsLetterOrDigit(s[l]) && char.IsLetterOrDigit(s[r]))
+                {
+                    if(char.ToLower(s[l]) != char.ToLower(s[r])) return false;
+                    l++;
+                    r--;
+                }
+            }
+
+            return true;
         }
     }
 }
