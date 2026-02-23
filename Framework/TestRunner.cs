@@ -110,7 +110,6 @@ namespace BeetCode.Framework
 
         private static bool AreLinkedListsEqual(ListNode list1, ListNode list2)
         {
-            Console.WriteLine("Checking linked lists");
             while (list1 != null && list2 != null)
             {
                 if (list1.val != list2.val)

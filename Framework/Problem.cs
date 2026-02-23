@@ -3,18 +3,6 @@ using System.Linq;
 
 namespace BeetCode.Framework
 {
-    // Forward declaration of ListNode to avoid conflicts
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int val = 0, ListNode next = null)
-        {
-            this.val = val;
-            this.next = next;
-        }
-    }
-
     public abstract class Problem
     {
         public abstract int Number { get; }
@@ -112,7 +100,7 @@ namespace BeetCode.Framework
         }
 
         // Helper method to create linked list from array
-        protected ListNode CreateLinkedList(int[] values)
+        protected ListNode? CreateLinkedList(int[] values)
         {
             if (values.Length == 0) return null;
 

@@ -3,18 +3,6 @@ using System.Collections.Generic;
 
 namespace BeetCode.Problems
 {
-    // Definition for singly-linked list
-    public class ListNode
-    {
-        public int val;
-        public ListNode next;
-        public ListNode(int x)
-        {
-            val = x;
-            next = null;
-        }
-    }
-
     public class Problem141 : Problem
     {
         public override int Number => 141;

@@ -52,39 +52,6 @@ namespace BeetCode.Problems
             return LinkedListToArray(result);
         }
 
-        // Helper method to create a linked list from an array
-        private ListNode CreateLinkedList(int[] values)
-        {
-            if (values == null || values.Length == 0) return null;
-
-            ListNode head = new ListNode(values[0]);
-            ListNode current = head;
-
-            for (int i = 1; i < values.Length; i++)
-            {
-                current.next = new ListNode(values[i]);
-                current = current.next;
-            }
-
-            return head;
-        }
-
-        // Helper method to convert linked list to array for comparison
-        private int[] LinkedListToArray(ListNode head)
-        {
-            if (head == null) return new int[0];
-
-            List<int> values = new List<int>();
-            ListNode current = head;
-            while (current != null)
-            {
-                values.Add(current.val);
-                current = current.next;
-            }
-
-            return values.ToArray();
-        }
-
         // YOUR SOLUTION GOES HERE
         public ListNode ReverseList(ListNode head)
         {

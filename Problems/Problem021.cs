@@ -5,12 +5,12 @@ namespace BeetCode.Problems
 {
     /// <summary>
     /// 21. Merge Two Sorted Lists
-    /// 
+    ///
     /// You are given the heads of two sorted linked lists list1 and list2.
-    /// 
-    /// Merge the two lists into one sorted list. The list should be made by splicing 
+    ///
+    /// Merge the two lists into one sorted list. The list should be made by splicing
     /// together the nodes of the first two lists.
-    /// 
+    ///
     /// Return the head of the merged linked list.
     /// </summary>
     public class Problem021 : Problem
@@ -38,61 +38,47 @@ namespace BeetCode.Problems
             "Difficulty: Easy\n" +
             "Tags: Linked List, Recursion";
 
-        /// <summary>
-        /// Definition for singly-linked list.
-        /// </summary>
-        public class ListNode
-        {
-            public int val;
-            public ListNode next;
-            public ListNode(int val = 0, ListNode next = null)
-            {
-                this.val = val;
-                this.next = next;
-            }
-        }
-
         public override List<TestCase> GetTestCases()
         {
             return new List<TestCase>
             {
                 new TestCase("Example 1",
-                    new object[] { 
+                    new object[] {
                         CreateLinkedList(new int[] { 1, 2, 4 }),
                         CreateLinkedList(new int[] { 1, 3, 4 })
                     },
                     CreateLinkedList(new int[] { 1, 1, 2, 3, 4, 4 })),
 
                 new TestCase("Example 2",
-                    new object[] { 
+                    new object[] {
                         CreateLinkedList(new int[] { }),
                         CreateLinkedList(new int[] { })
                     },
                     CreateLinkedList(new int[] { })),
 
                 new TestCase("Example 3",
-                    new object[] { 
+                    new object[] {
                         CreateLinkedList(new int[] { }),
                         CreateLinkedList(new int[] { 0 })
                     },
                     CreateLinkedList(new int[] { 0 })),
 
                 new TestCase("Single node each",
-                    new object[] { 
+                    new object[] {
                         CreateLinkedList(new int[] { 1 }),
                         CreateLinkedList(new int[] { 2 })
                     },
                     CreateLinkedList(new int[] { 1, 2 })),
 
                 new TestCase("Different lengths",
-                    new object[] { 
+                    new object[] {
                         CreateLinkedList(new int[] { 1, 2, 3 }),
                         CreateLinkedList(new int[] { 4, 5, 6, 7, 8 })
                     },
                     CreateLinkedList(new int[] { 1, 2, 3, 4, 5, 6, 7, 8 })),
 
                 new TestCase("Interleaved values",
-                    new object[] { 
+                    new object[] {
                         CreateLinkedList(new int[] { 1, 5, 9 }),
                         CreateLinkedList(new int[] { 2, 4, 6, 8 })
                     },
@@ -102,73 +88,40 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            var list1 = (ListNode)inputs[0];
-            var list2 = (ListNode)inputs[1];
+            var list1 = (ListNode?)inputs[0];
+            var list2 = (ListNode?)inputs[1];
             return MergeTwoLists(list1, list2);
         }
 
         /// <summary>
         /// YOUR SOLUTION GOES HERE!
         /// Replace the NotImplementedException with your implementation.
-        /// 
+        ///
         /// Approaches to consider:
         /// 1. Iterative with dummy node
         /// 2. Recursive approach
         /// 3. In-place merging
-        /// 
+        ///
         /// Time Complexity: O(m + n) where m and n are the lengths of the lists
         /// Space Complexity: O(1) for iterative, O(m + n) for recursive (call stack)
         /// </summary>
-        public ListNode MergeTwoLists(ListNode list1, ListNode list2)
+        public ListNode? MergeTwoLists(ListNode? list1, ListNode? list2)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
-        }
-
-        // Helper methods for creating and working with linked lists
-        private ListNode CreateLinkedList(int[] values)
-        {
-            if (values.Length == 0) return null;
-            
-            ListNode head = new ListNode(values[0]);
-            ListNode current = head;
-            
-            for (int i = 1; i < values.Length; i++)
+            if(list1 == null && list2 == null) return null;
+            if(list1 != null && list2 == null) return list1;
+            if(list1 == null && list2 != null) return list2;
+            ListNode result;
+            if(list1?.val < list2?.val)
             {
-                current.next = new ListNode(values[i]);
-                current = current.next;
+                result = list1;
+                result.next = MergeTwoLists(list1.next, list2);
             }
-            
-            return head;
-        }
-
-        private bool AreLinkedListsEqual(ListNode expected, ListNode actual)
-        {
-            while (expected != null && actual != null)
+            else
             {
-                if (expected.val != actual.val)
-                    return false;
-                expected = expected.next;
-                actual = actual.next;
+                result = list2;
+                result.next = MergeTwoLists(list1, list2.next);
             }
-            
-            return expected == null && actual == null;
-        }
-
-        private string FormatLinkedList(ListNode head)
-        {
-            if (head == null) return "[]";
-            
-            List<int> values = new List<int>();
-            ListNode current = head;
-            
-            while (current != null)
-            {
-                values.Add(current.val);
-                current = current.next;
-            }
-            
-            return "[" + string.Join(", ", values) + "]";
+            return result;
         }
     }
 }
