@@ -71,8 +71,31 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public int LengthOfLastWord(string s)
 		{
-			// TODO: Implement your solution
-			throw new NotImplementedException();
+			if (s == null || s.Length == 0) return 0;
+
+			int length = 0;
+			bool counting = false;
+			int pointer = 0;
+			while (pointer < s.Length)
+			{
+				if (s[pointer] != ' ')
+				{
+					if (!counting)
+					{
+						length = 0; // reset
+						counting = true;
+					}
+					length++;
+				}
+				else
+				{
+					counting = false;
+				}
+
+				pointer++;
+			}
+
+			return length;
 		}
 	}
 }
