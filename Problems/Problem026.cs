@@ -65,7 +65,23 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public int RemoveDuplicates(int[] nums)
 		{
-			throw new NotImplementedException();
+			if(nums == null || nums.Length == 0) return 0;
+
+			int l = 0;
+			int r = 1;
+			while(r < nums.Length)
+			{
+				if(nums[l] == nums[r])
+				{
+					r++;
+				}
+				else
+				{
+					l++;
+					nums[l] = nums[r];
+				}
+			}
+			return l + 1;
 		}
 	}
 }
