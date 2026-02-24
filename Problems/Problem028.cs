@@ -69,12 +69,12 @@ namespace BeetCode.Problems
 			if(	haystack == null || needle == null ||
 				haystack?.Length < needle?.Length ||
 				haystack?.Length == 0) return -1;
-			if(needle.Length == 0) return 0;
+			if(needle?.Length == 0) return 0;
 
 			int h = 0;
-			while(haystack.Length - h >= needle.Length) // should be enough chars remaining to find needle
+			while(haystack?.Length - h >= needle?.Length) // should be enough chars remaining to find needle
 			{
-				if(haystack[h] == needle[0])
+				if(haystack?[h] == needle[0])
 				{
 					int n = 0;
 					while(n < needle.Length && needle[n] == haystack[h + n])
