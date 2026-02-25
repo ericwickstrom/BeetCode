@@ -37,25 +37,34 @@ namespace BeetCode.Problems
 		{
 			return new List<TestCase>
 			{
-				new TestCase("Example 1",
+				new TestCase("[3, 2, 1] -> 1",
 					new object[] { new int[] { 3, 2, 1 } },
 					1),
 
-				new TestCase("Example 2",
+				new TestCase("[1, 2] -> 2",
 					new object[] { new int[] { 1, 2 } },
 					2),
 
-				new TestCase("Example 3",
+				new TestCase("[2, 2, 3, 1] -> 1",
 					new object[] { new int[] { 2, 2, 3, 1 } },
 					1),
 
-				new TestCase("All duplicates",
+				new TestCase("[5, 5, 5] -> 5",
 					new object[] { new int[] { 5, 5, 5 } },
 					5),
 
-				new TestCase("Negative numbers",
+				new TestCase("[1, -2, -3] -> -3",
 					new object[] { new int[] { 1, -2, -3 } },
 					-3),
+
+				new TestCase("[5,2,2] -> 5",
+					new object[] { new int[] {5,2,2 } },
+					5),
+
+				new TestCase("[1,2,-2147483648] -> 2",
+					new object[] { new int[] {1,2,-2147483648} },
+					-2147483648),
+					
 			};
 		}
 
@@ -68,7 +77,34 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public int ThirdMax(int[] nums)
 		{
-			throw new System.NotImplementedException();
+			if (nums == null || nums.Length == 0) return 0;
+
+			long first = long.MinValue;
+			long second = long.MinValue;
+			long third = long.MinValue;
+
+			foreach (int num in nums)
+			{
+				if(num == first || num == second || num == third) continue;
+				
+				if (num > first)
+				{
+					third = second;
+					second = first;
+					first = num;
+				}
+				else if (num > second)
+				{
+					third = second;
+					second = num;
+				}
+				else if (num > third)
+				{
+					third = num;
+				}
+			}
+
+			return third == long.MinValue ? (int)first : (int)third;
 		}
 	}
 }
