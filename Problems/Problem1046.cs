@@ -71,7 +71,26 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public int LastStoneWeight(int[] stones)
 		{
-			throw new NotImplementedException();
+			PriorityQueue<int,int> pq = new PriorityQueue<int, int>();
+			foreach(int stone in stones)
+			{
+				pq.Enqueue(stone, -1 * stone);
+			}
+
+			while(pq.Count > 1)
+			{
+				int stone1 = pq.Dequeue();
+				int stone2 = pq.Dequeue();
+
+				if(stone1 != stone2)
+				{
+					int stone3 = Math.Abs(stone1 - stone2);
+					pq.Enqueue(stone3, -1 * stone3);
+				}
+			}
+
+			if(pq.Count == 0) return 0;
+			return pq.Peek();
 		}
 	}
 }

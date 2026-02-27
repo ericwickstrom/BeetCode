@@ -76,9 +76,9 @@ dotnet run -- scaffold 1
 ```
 
 This will automatically create a complete problem file with:
-- ✅ Problem description, difficulty, and examples
-- ✅ Method signature ready for your solution
-- ✅ Integration into the test runner
+- Problem description, difficulty, and examples
+- Method signature ready for your solution
+- Integration into the test runner
 
 *Note: Some problems may require manual adjustment of test cases if the data format is complex.*
 
@@ -146,33 +146,33 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Completed: 13 / 150**
+**Completed: 14 / 150**
 
 ---
 
-## 🟢 Easy (35 problems — 13 / 35)
+## 🟢 Easy (35 problems — 14 / 35)
 
 ### Arrays & Hashing
-- ✅ 217 · Contains Duplicate
-- ✅ 242 · Valid Anagram
-- ✅ 1 · Two Sum
+✅ 217 · Contains Duplicate
+✅ 242 · Valid Anagram
+✅ 1 · Two Sum
 
 ### Two Pointers
-- ✅ 125 · Valid Palindrome
+✅ 125 · Valid Palindrome
 
 ### Sliding Window
-- ✅ 121 · Best Time to Buy and Sell Stock
+✅ 121 · Best Time to Buy and Sell Stock
 
 ### Stack
-- ✅ 20 · Valid Parentheses
+✅ 20 · Valid Parentheses
 
 ### Binary Search
-- ✅ 704 · Binary Search
+✅ 704 · Binary Search
 
 ### Linked List
-- ✅ 206 · Reverse Linked List
-- ✅ 141 · Linked List Cycle
-- ✅ 21 · Merge Two Sorted Lists
+✅ 206 · Reverse Linked List
+✅ 141 · Linked List Cycle
+✅ 21 · Merge Two Sorted Lists
 
 ### Trees
 - [ ] 226 · Invert Binary Tree
@@ -184,7 +184,7 @@ MIT License - Practice away! 🚀
 
 ### Heap / Priority Queue
 ✅ 703 · Kth Largest Element in a Stream
-- [ ] 1046 · Last Stone Weight
+✅ 1046 · Last Stone Weight
 
 ### 1-D Dynamic Programming
 - [ ] 70 · Climbing Stairs
@@ -194,11 +194,11 @@ MIT License - Practice away! 🚀
 - [ ] 252 · Meeting Rooms *(Premium)*
 
 ### Math & Geometry
-- ✅ 202 · Happy Number
+✅ 202 · Happy Number
 - [ ] 66 · Plus One
 
 ### Bit Manipulation
-- ✅ 136 · Single Number
+✅ 136 · Single Number
 - [ ] 191 · Number of 1 Bits
 - [ ] 338 · Counting Bits
 - [ ] 190 · Reverse Bits
