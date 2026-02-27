@@ -115,14 +115,33 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public class KthLargest
 		{
+			private readonly int _size;
+			private readonly PriorityQueue<int, int> _pq;
 			public KthLargest(int k, int[] nums)
 			{
-				throw new NotImplementedException();
+				_size = k;
+				_pq = new PriorityQueue<int, int>();
+				foreach (int num in nums)
+				{
+					Add(num);
+				}
 			}
 
 			public int Add(int val)
 			{
-				throw new NotImplementedException();
+				if(_pq.Count < _size)
+				{
+					_pq.Enqueue(val,val);
+				}
+				else
+				{
+					int root = _pq.Peek();
+					if(val > root)
+					{
+						_pq.DequeueEnqueue(val,val);
+					}
+				}
+				return _pq.Peek();
 			}
 		}
 	}
