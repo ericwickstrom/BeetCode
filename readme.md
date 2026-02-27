@@ -5,9 +5,10 @@ A local C# console application for practicing LeetCode problems in your own IDE.
 ## ✨ Features
 
 - **Local Development**: Write solutions in VS Code with all your favorite extensions
+- **Automatic Scaffolding**: Generate new problem files directly from LeetCode data with one command
 - **Automatic Testing**: Built-in test runner with formatted output
 - **Problem Management**: Easy CLI commands to run, test, and manage problems
-- **Extensible Framework**: Add new problems with a simple, consistent structure
+- **Solution Resetting**: Quickly reset one or all solutions back to their initial state
 - **Clean Output**: Pretty-printed test results with pass/fail status
 
 ## 🚀 Quick Start
@@ -25,6 +26,9 @@ dotnet build
 
 ### Usage
 ```bash
+# Generate a new problem file from LeetCode
+dotnet run -- scaffold 1
+
 # Run tests for a specific problem
 dotnet run -- test 1
 
@@ -34,8 +38,11 @@ dotnet run -- run 1
 # Show just the problem description
 dotnet run -- info 1
 
-# List all available problems
+# List all available problems and your progress
 dotnet run -- list
+
+# Reset a solution
+dotnet run -- reset 1
 
 # Show help
 dotnet run -- help
@@ -46,34 +53,38 @@ dotnet run -- help
 ```
 BeetCode/
 ├── Framework/
-│   ├── Problem.cs          # Abstract base class for all problems
-│   ├── TestCase.cs         # Test case data structure
-│   └── TestRunner.cs       # Test execution engine
+│   ├── LeetCodeClient.cs    # Fetches problem data from LeetCode
+│   ├── Problem.cs           # Abstract base class for all problems
+│   ├── ResetHelper.cs       # Utility for resetting solutions
+│   ├── ScaffoldGenerator.cs # Generates C# boilerplate from problem data
+│   ├── TestCase.cs          # Test case data structure
+│   └── TestRunner.cs        # Test execution engine
 ├── Problems/
-│   ├── Problem001.cs       # Two Sum
-│   ├── Problem002.cs       # Add Two Numbers
-│   └── ...                 # More problems as you add them
-├── Program.cs              # CLI entry point
-└── README.md              # You are here!
+│   ├── Problem001.cs        # Two Sum
+│   ├── Problem002.cs        # Add Two Numbers
+│   └── ...                  # More problems as you add them
+├── Program.cs               # CLI entry point
+└── README.md               # You are here!
 ```
 
 ## 🎯 Adding New Problems
 
-Want to practice a new LeetCode problem? Just ask me to generate it! For example:
+Want to practice a new LeetCode problem? Use the `scaffold` command:
 
-```
-"Hey Claude, generate Problem002.cs for Add Two Numbers"
+```bash
+dotnet run -- scaffold 1
 ```
 
-I'll create a complete problem file with:
-- ✅ Problem description and examples
+This will automatically create a complete problem file with:
+- ✅ Problem description, difficulty, and examples
 - ✅ Method signature ready for your solution
-- ✅ Test cases from LeetCode examples
-- ✅ Framework integration
+- ✅ Integration into the test runner
+
+*Note: Some problems may require manual adjustment of test cases if the data format is complex.*
 
 ## 💡 Example Workflow
 
-1. **Pick a problem**: `dotnet run -- list`
+1. **Scaffold a problem**: `dotnet run -- scaffold 1`
 2. **Read the description**: `dotnet run -- info 1`
 3. **Open the file**: Edit `Problems/Problem001.cs`
 4. **Write your solution**: Replace the `NotImplementedException`
@@ -102,10 +113,14 @@ All tests passed! 🎉
 
 | Command | Description | Example |
 |---------|-------------|---------|
-| `test <number>` | Run tests for a problem | `dotnet run -- test 1` |
-| `run <number>` | Show info + run tests | `dotnet run -- run 1` |
-| `info <number>` | Show problem description | `dotnet run -- info 1` |
-| `list` | List all problems | `dotnet run -- list` |
+| `scaffold <n>` | Generate problem file from LeetCode | `dotnet run -- scaffold 1` |
+| `test <n>` | Run tests for a problem | `dotnet run -- test 1` |
+| `run <n>` | Show info + run tests | `dotnet run -- run 1` |
+| `info <n>` | Show problem description | `dotnet run -- info 1` |
+| `list` | List all problems and progress | `dotnet run -- list` |
+| `reset <n>` | Reset a specific solution | `dotnet run -- reset 1` |
+| `reset` | Reset ALL solutions (prompts) | `dotnet run -- reset` |
+| `update-data` | Refresh local LeetCode problem cache | `dotnet run -- update-data` |
 | `help` | Show help message | `dotnet run -- help` |
 
 ## 🎨 Why BeetCode?

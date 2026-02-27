@@ -394,3 +394,8 @@ CLAUDE.md
 PROJECT.md
 
 .claude/
+
+temp_lc.json
+Framework/leetcode_data.json
+*.json
+nul

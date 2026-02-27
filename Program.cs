@@ -51,6 +51,19 @@ namespace BeetCode
                     ListProblems();
                     break;
 
+                case "scaffold":
+                    if (args.Length < 2 || !int.TryParse(args[1], out int scaffoldProblemNumber))
+                    {
+                        Console.WriteLine("Usage: dotnet run -- scaffold <problem_number>");
+                        return;
+                    }
+                    ScaffoldProblem(scaffoldProblemNumber);
+                    break;
+
+                case "update-data":
+                    UpdateData();
+                    break;
+
                 case "reset":
                     if (args.Length < 2)
                     {
@@ -76,6 +89,73 @@ namespace BeetCode
                     Console.WriteLine($"Unknown command: {command}");
                     ShowHelp();
                     break;
+            }
+        }
+
+        // -------------------------------------------------------------------------
+        // Scaffold command
+        // -------------------------------------------------------------------------
+
+        static void ScaffoldProblem(int problemNumber)
+        {
+            string problemsDir = ResetHelper.FindProblemsDirectory();
+            if (problemsDir == null)
+            {
+                Console.WriteLine("Could not locate the Problems directory.");
+                return;
+            }
+
+            string filePath = ResetHelper.GetProblemFilePath(problemsDir, problemNumber);
+            if (System.IO.File.Exists(filePath))
+            {
+                Console.WriteLine($"Problem{problemNumber:D3}.cs already exists.");
+                Console.WriteLine($"Use 'dotnet run -- reset {problemNumber}' to reset it, or delete it manually.");
+                return;
+            }
+
+            try
+            {
+                using var client = new LeetCodeClient();
+                var problem = client.FetchProblem(problemNumber);
+
+                if (problem.IsPaidOnly)
+                {
+                    Console.WriteLine($"Problem {problemNumber} ({problem.Title}) is a premium problem and cannot be scaffolded.");
+                    return;
+                }
+
+                string content = ScaffoldGenerator.Generate(problem);
+                System.IO.File.WriteAllText(filePath, content);
+
+                Console.WriteLine($"✅ Created Problem{problemNumber:D3}.cs");
+                Console.WriteLine($"   {problem.Title} ({problem.Difficulty})");
+                Console.WriteLine();
+                Console.WriteLine("Review the generated file and fill in the TODOs (test cases, solution method).");
+            }
+            catch (System.Net.Http.HttpRequestException ex)
+            {
+                Console.WriteLine($"Network error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+        }
+
+        static void UpdateData()
+        {
+            try
+            {
+                using var client = new LeetCodeClient();
+                client.UpdateCache();
+            }
+            catch (System.Net.Http.HttpRequestException ex)
+            {
+                Console.WriteLine($"Network error: {ex.Message}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error: {ex.Message}");
             }
         }
 
@@ -246,13 +326,15 @@ namespace BeetCode
             Console.WriteLine("Usage: dotnet run -- <command> [arguments]");
             Console.WriteLine();
             Console.WriteLine("Commands:");
-            Console.WriteLine("  test <number>    Run tests for problem number");
-            Console.WriteLine("  run <number>     Show problem info and run tests");
-            Console.WriteLine("  info <number>    Show problem description");
-            Console.WriteLine("  list             List all available problems");
-            Console.WriteLine("  reset <number>   Reset one problem's solution");
-            Console.WriteLine("  reset            Reset ALL problem solutions");
-            Console.WriteLine("  help             Show this help message");
+            Console.WriteLine("  test <number>       Run tests for problem number");
+            Console.WriteLine("  run <number>        Show problem info and run tests");
+            Console.WriteLine("  info <number>       Show problem description");
+            Console.WriteLine("  list                List all available problems");
+            Console.WriteLine("  scaffold <number>   Generate a problem file from LeetCode data");
+            Console.WriteLine("  update-data         Re-download LeetCode problem data");
+            Console.WriteLine("  reset <number>      Reset one problem's solution");
+            Console.WriteLine("  reset               Reset ALL problem solutions");
+            Console.WriteLine("  help                Show this help message");
             Console.WriteLine();
             Console.WriteLine("Examples:");
             Console.WriteLine("  dotnet run -- test 1      # Test Problem 1 (Two Sum)");

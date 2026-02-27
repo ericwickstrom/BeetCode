@@ -33,35 +33,35 @@ namespace BeetCode.Problems
         {
             return new List<TestCase>
             {
-                new TestCase("Example 1 - Happy number", 
+                new TestCase("19 -> true", 
                     new object[] { 19 }, 
                     true),
                 
-                new TestCase("Example 2 - Unhappy number", 
+                new TestCase("2 -> false", 
                     new object[] { 2 }, 
                     false),
                 
-                new TestCase("Single digit happy", 
+                new TestCase("1 -> true", 
                     new object[] { 1 }, 
                     true),
 
-                new TestCase("Single digit happy", 
+                new TestCase("7 -> true", 
                     new object[] { 7 }, 
                     true),
 
-                new TestCase("Single digit unhappy", 
+                new TestCase("4 -> false", 
                     new object[] { 4 }, 
                     false),
 
-                new TestCase("Another happy number", 
+                new TestCase("10 -> true", 
                     new object[] { 10 }, 
                     true),
 
-                new TestCase("Three digit unhappy", 
+                new TestCase("145 -> false", 
                     new object[] { 145 }, 
                     false),
 
-                new TestCase("Large happy number", 
+                new TestCase("23 -> true", 
                     new object[] { 23 }, 
                     true)
             };
@@ -75,8 +75,23 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsHappy(int n)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            HashSet<int> previous = new HashSet<int>();
+
+            while (true)
+            {  
+                int sum = 0;
+                int i = n;
+                while (i > 0)
+                {
+                    int digit = i % 10;
+                    sum += digit * digit;
+                    i /= 10;
+                }
+
+                if(sum == 1) return true;
+                if(!previous.Add(sum)) return false;
+                n = sum;
+            }
         }
     }
 }
