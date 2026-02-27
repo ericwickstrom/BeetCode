@@ -85,17 +85,13 @@ namespace BeetCode.Problems
 		{
 			return new List<TestCase>
 			{
-				// Input: 
-				// Expected output: [null, 4, 5, 5, 8, 8]
 				new TestCase("Example 1",
-					new object[] { /* TODO */ },
-					null /* TODO */),
+					new object[] { 3, new int[] { 4, 5, 8, 2 }, new int[] { 3, 5, 10, 9, 4 } },
+					new int[] { 4, 5, 5, 8, 8 }),
 
-				// Input: 
-				// Expected output: [null, 7, 7, 7, 8]
 				new TestCase("Example 2",
-					new object[] { /* TODO */ },
-					null /* TODO */),
+					new object[] { 4, new int[] { 7, 7, 7, 7, 8, 3 }, new int[] { 2, 10, 9, 9 } },
+					new int[] { 7, 7, 7, 8 }),
 
 				// TODO: Add edge cases beyond LeetCode examples
 			};
@@ -103,15 +99,31 @@ namespace BeetCode.Problems
 
 		public override object ExecuteSolution(object[] inputs)
 		{
-			// TODO: Cast inputs and call your solution method
-			throw new NotImplementedException();
+			int k = (int)inputs[0];
+			int[] nums = (int[])inputs[1];
+			int[] addValues = (int[])inputs[2];
+
+			var obj = new KthLargest(k, nums);
+			var results = new int[addValues.Length];
+			for (int i = 0; i < addValues.Length; i++)
+			{
+				results[i] = obj.Add(addValues[i]);
+			}
+			return results;
 		}
 
 		// YOUR SOLUTION GOES HERE
-		// TODO: Add your solution method
-		// public ReturnType MethodName(params)
-		// {
-		//     throw new NotImplementedException();
-		// }
+		public class KthLargest
+		{
+			public KthLargest(int k, int[] nums)
+			{
+				throw new NotImplementedException();
+			}
+
+			public int Add(int val)
+			{
+				throw new NotImplementedException();
+			}
+		}
 	}
 }
