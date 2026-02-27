@@ -183,7 +183,7 @@ MIT License - Practice away! 🚀
 - [ ] 572 · Subtree of Another Tree
 
 ### Heap / Priority Queue
-- ✅ 703 · Kth Largest Element in a Stream
+✅ 703 · Kth Largest Element in a Stream
 - [ ] 1046 · Last Stone Weight
 
 ### 1-D Dynamic Programming
