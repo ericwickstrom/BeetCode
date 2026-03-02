@@ -173,7 +173,9 @@ MIT License - Practice away! 🚀
 
 ### Linked List
 ✅ 206 · Reverse Linked List
+
 ✅ 141 · Linked List Cycle
+
 ✅ 21 · Merge Two Sorted Lists
 
 ### Trees
@@ -186,6 +188,7 @@ MIT License - Practice away! 🚀
 
 ### Heap / Priority Queue
 ✅ 703 · Kth Largest Element in a Stream
+
 ✅ 1046 · Last Stone Weight
 
 ### 1-D Dynamic Programming
