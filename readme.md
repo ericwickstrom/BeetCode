@@ -146,7 +146,7 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 22**
+**Total Solved: 23**
 
 | Set | Progress |
 |-----|----------|
@@ -154,7 +154,7 @@ MIT License - Practice away! 🚀
 
 ---
 
-## 🟢 Easy (42 problems — 22 / 42)
+## 🟢 Easy (42 problems — 23 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -174,7 +174,7 @@ MIT License - Practice away! 🚀
 ### Two Pointers
 ✅ 125 · Valid Palindrome 🅱️
 
-🔲 344 · Reverse String
+✅ 344 · Reverse String
 
 ### Sliding Window
 ✅ 121 · Best Time to Buy and Sell Stock 🅱️

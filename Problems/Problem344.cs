@@ -70,8 +70,17 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public void ReverseString(char[] s)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            if(s == null || s.Length == 0) return;
+            int l = 0;
+            int r = s.Length - 1;
+            while(l < r)
+            {
+                char temp = s[l];
+                s[l] = s[r];
+                s[r] = temp;
+                l++;
+                r--;
+            }
         }
     }
 }
