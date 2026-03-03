@@ -102,25 +102,11 @@ namespace BeetCode.Framework
 			// Update summary section
 			UpdateSummarySection(lines, solvedNumbers, problemSets);
 
-			// Remove blank lines between consecutive problem entries
-			for (int i = lines.Count - 1; i >= 0; i--)
+			// Ensure a blank line between consecutive problem entries so markdown renders each on its own line
+			for (int i = lines.Count - 2; i >= 0; i--)
 			{
-				if (!string.IsNullOrWhiteSpace(lines[i]))
-					continue;
-
-				int prev = i - 1;
-				while (prev >= 0 && string.IsNullOrWhiteSpace(lines[prev]))
-					prev--;
-
-				int next = i + 1;
-				while (next < lines.Count && string.IsNullOrWhiteSpace(lines[next]))
-					next++;
-
-				bool prevIsProblem = prev >= 0 && problemPattern.IsMatch(lines[prev]);
-				bool nextIsProblem = next < lines.Count && problemPattern.IsMatch(lines[next]);
-
-				if (prevIsProblem && nextIsProblem)
-					lines.RemoveAt(i);
+				if (problemPattern.IsMatch(lines[i]) && problemPattern.IsMatch(lines[i + 1]))
+					lines.Insert(i + 1, "");
 			}
 
 			File.WriteAllLines(readmePath, lines);

@@ -158,15 +158,22 @@ MIT License - Practice away! 🚀
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
+
 ✅ 242 · Valid Anagram 🅱️
+
 ✅ 1 · Two Sum 🅱️
+
 ✅ 26 · Remove Duplicates from Sorted Array
+
 ✅ 27 · Remove Element
+
 🔲 383 · Ransom Note
+
 ✅ 414 · Third Maximum Number
 
 ### Two Pointers
 ✅ 125 · Valid Palindrome 🅱️
+
 🔲 344 · Reverse String
 
 ### Sliding Window
@@ -177,9 +184,13 @@ MIT License - Practice away! 🚀
 
 ### Strings
 🔲 13 · Roman to Integer
+
 ✅ 14 · Longest Common Prefix
+
 ✅ 28 · Find the Index of the First Occurrence in a String
+
 ✅ 58 · Length of Last Word
+
 🔲 168 · Excel Sheet Column Title
 
 ### Binary Search
@@ -187,23 +198,32 @@ MIT License - Practice away! 🚀
 
 ### Linked List
 🔲 206 · Reverse Linked List 🅱️
+
 ✅ 141 · Linked List Cycle 🅱️
+
 ✅ 21 · Merge Two Sorted Lists 🅱️
 
 ### Trees
 ✅ 226 · Invert Binary Tree 🅱️
+
 🔲 104 · Maximum Depth of Binary Tree 🅱️
+
 🔲 543 · Diameter of Binary Tree 🅱️
+
 🔲 110 · Balanced Binary Tree 🅱️
+
 🔲 100 · Same Tree 🅱️
+
 🔲 572 · Subtree of Another Tree 🅱️
 
 ### Heap / Priority Queue
 ✅ 703 · Kth Largest Element in a Stream 🅱️
+
 ✅ 1046 · Last Stone Weight 🅱️
 
 ### 1-D Dynamic Programming
 🔲 70 · Climbing Stairs 🅱️
+
 🔲 746 · Min Cost Climbing Stairs 🅱️
 
 ### Intervals
@@ -211,17 +231,26 @@ MIT License - Practice away! 🚀
 
 ### Math & Geometry
 ✅ 202 · Happy Number 🅱️
+
 🔲 66 · Plus One 🅱️
+
 ✅ 9 · Palindrome Number
+
 🔲 258 · Add Digits
+
 ✅ 412 · Fizz Buzz
 
 ### Bit Manipulation
 ✅ 136 · Single Number 🅱️
+
 🔲 191 · Number of 1 Bits 🅱️
+
 🔲 338 · Counting Bits 🅱️
+
 🔲 190 · Reverse Bits 🅱️
+
 🔲 268 · Missing Number 🅱️
+
 🔲 389 · Find the Difference
 
 ---
@@ -230,138 +259,220 @@ MIT License - Practice away! 🚀
 
 ### Arrays & Hashing
 🔲 49 · Group Anagrams 🅱️
+
 🔲 347 · Top K Frequent Elements 🅱️
+
 🔲 238 · Product of Array Except Self 🅱️
+
 🔲 36 · Valid Sudoku 🅱️
+
 🔲 271 · Encode and Decode Strings *(Premium)* 🅱️
+
 🔲 128 · Longest Consecutive Sequence 🅱️
 
 ### Two Pointers
 🔲 167 · Two Sum II - Input Array Is Sorted 🅱️
+
 🔲 15 · 3Sum 🅱️
+
 🔲 11 · Container With Most Water 🅱️
 
 ### Sliding Window
 🔲 3 · Longest Substring Without Repeating Characters 🅱️
+
 🔲 424 · Longest Repeating Character Replacement 🅱️
+
 🔲 567 · Permutation in String 🅱️
 
 ### Stack
 🔲 155 · Min Stack 🅱️
+
 🔲 150 · Evaluate Reverse Polish Notation 🅱️
+
 🔲 22 · Generate Parentheses 🅱️
+
 🔲 739 · Daily Temperatures 🅱️
+
 🔲 853 · Car Fleet 🅱️
 
 ### Binary Search
 🔲 74 · Search a 2D Matrix 🅱️
+
 🔲 875 · Koko Eating Bananas 🅱️
+
 🔲 153 · Find Minimum in Rotated Sorted Array 🅱️
+
 🔲 33 · Search in Rotated Sorted Array 🅱️
+
 🔲 981 · Time Based Key-Value Store 🅱️
 
 ### Linked List
 🔲 143 · Reorder List 🅱️
+
 🔲 19 · Remove Nth Node From End of List 🅱️
+
 🔲 138 · Copy List With Random Pointer 🅱️
+
 🔲 2 · Add Two Numbers 🅱️
+
 🔲 287 · Find the Duplicate Number 🅱️
+
 🔲 146 · LRU Cache 🅱️
 
 ### Trees
 🔲 235 · Lowest Common Ancestor of BST 🅱️
+
 🔲 102 · Binary Tree Level Order Traversal 🅱️
+
 🔲 199 · Binary Tree Right Side View 🅱️
+
 🔲 1448 · Count Good Nodes in Binary Tree 🅱️
+
 🔲 98 · Validate Binary Search Tree 🅱️
+
 🔲 230 · Kth Smallest Element in BST 🅱️
+
 🔲 105 · Construct Binary Tree from Preorder and Inorder 🅱️
 
 ### Tries
 🔲 208 · Implement Trie (Prefix Tree) 🅱️
+
 🔲 211 · Design Add and Search Words Data Structure 🅱️
 
 ### Heap / Priority Queue
 🔲 973 · K Closest Points to Origin 🅱️
+
 🔲 215 · Kth Largest Element in an Array 🅱️
+
 🔲 621 · Task Scheduler 🅱️
+
 🔲 355 · Design Twitter 🅱️
 
 ### Backtracking
 🔲 46 · Permutations 🅱️
+
 🔲 78 · Subsets 🅱️
+
 🔲 39 · Combination Sum 🅱️
+
 🔲 90 · Subsets II 🅱️
+
 🔲 40 · Combination Sum II 🅱️
+
 🔲 79 · Word Search 🅱️
+
 🔲 131 · Palindrome Partitioning 🅱️
+
 🔲 17 · Letter Combinations of a Phone Number 🅱️
 
 ### Graphs
 🔲 200 · Number of Islands 🅱️
+
 🔲 133 · Clone Graph 🅱️
+
 🔲 695 · Max Area of Island 🅱️
+
 🔲 417 · Pacific Atlantic Water Flow 🅱️
+
 🔲 130 · Surrounded Regions 🅱️
+
 🔲 994 · Rotting Oranges 🅱️
+
 🔲 286 · Walls and Gates *(Premium)* 🅱️
+
 🔲 207 · Course Schedule 🅱️
+
 🔲 210 · Course Schedule II 🅱️
+
 🔲 684 · Redundant Connection 🅱️
+
 🔲 323 · Number of Connected Components *(Premium)* 🅱️
+
 🔲 261 · Graph Valid Tree *(Premium)* 🅱️
 
 ### Advanced Graphs
 🔲 1584 · Min Cost to Connect All Points 🅱️
+
 🔲 743 · Network Delay Time 🅱️
+
 🔲 787 · Cheapest Flights Within K Stops 🅱️
 
 ### 1-D Dynamic Programming
 🔲 198 · House Robber 🅱️
+
 🔲 213 · House Robber II 🅱️
+
 🔲 5 · Longest Palindromic Substring 🅱️
+
 🔲 647 · Palindromic Substrings 🅱️
+
 🔲 91 · Decode Ways 🅱️
+
 🔲 322 · Coin Change 🅱️
+
 🔲 139 · Word Break 🅱️
+
 🔲 300 · Longest Increasing Subsequence 🅱️
+
 🔲 416 · Partition Equal Subset Sum 🅱️
 
 ### 2-D Dynamic Programming
 🔲 62 · Unique Paths 🅱️
+
 🔲 1143 · Longest Common Subsequence 🅱️
+
 🔲 309 · Best Time to Buy & Sell Stock with Cooldown 🅱️
+
 🔲 518 · Coin Change II 🅱️
+
 🔲 494 · Target Sum 🅱️
+
 🔲 97 · Interleaving String 🅱️
+
 🔲 72 · Edit Distance 🅱️
 
 ### Greedy
 🔲 53 · Maximum Subarray 🅱️
+
 🔲 55 · Jump Game 🅱️
+
 🔲 45 · Jump Game II 🅱️
+
 🔲 134 · Gas Station 🅱️
+
 🔲 846 · Hand of Straights 🅱️
+
 🔲 1899 · Merge Triplets to Form Target Triplet 🅱️
+
 🔲 763 · Partition Labels 🅱️
+
 🔲 678 · Valid Parenthesis String 🅱️
 
 ### Intervals
 🔲 57 · Insert Interval 🅱️
+
 🔲 56 · Merge Intervals 🅱️
+
 🔲 435 · Non-Overlapping Intervals 🅱️
+
 🔲 253 · Meeting Rooms II *(Premium)* 🅱️
 
 ### Math & Geometry
 🔲 48 · Rotate Image 🅱️
+
 🔲 54 · Spiral Matrix 🅱️
+
 🔲 73 · Set Matrix Zeroes 🅱️
+
 🔲 50 · Pow(x, n) 🅱️
+
 🔲 43 · Multiply Strings 🅱️
+
 🔲 2013 · Detect Squares 🅱️
 
 ### Bit Manipulation
 🔲 371 · Sum of Two Integers 🅱️
+
 🔲 7 · Reverse Integer 🅱️
 
 ---
@@ -373,6 +484,7 @@ MIT License - Practice away! 🚀
 
 ### Sliding Window
 🔲 76 · Minimum Window Substring 🅱️
+
 🔲 239 · Sliding Window Maximum 🅱️
 
 ### Stack
@@ -383,10 +495,12 @@ MIT License - Practice away! 🚀
 
 ### Linked List
 🔲 23 · Merge K Sorted Lists 🅱️
+
 🔲 25 · Reverse Nodes in K-Group 🅱️
 
 ### Trees
 🔲 124 · Binary Tree Maximum Path Sum 🅱️
+
 🔲 297 · Serialize and Deserialize Binary Tree 🅱️
 
 ### Tries
@@ -400,13 +514,18 @@ MIT License - Practice away! 🚀
 
 ### Advanced Graphs
 🔲 332 · Reconstruct Itinerary 🅱️
+
 🔲 778 · Swim in Rising Water 🅱️
+
 🔲 269 · Alien Dictionary *(Premium)* 🅱️
 
 ### 2-D Dynamic Programming
 🔲 329 · Longest Increasing Path in a Matrix 🅱️
+
 🔲 115 · Distinct Subsequences 🅱️
+
 🔲 312 · Burst Balloons 🅱️
+
 🔲 10 · Regular Expression Matching 🅱️
 
 ### Intervals
