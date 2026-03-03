@@ -78,7 +78,26 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public int[] PlusOne(int[] digits)
 		{
-			throw new NotImplementedException();
+			int pointer = digits.Length-1;		
+			while(pointer >= 0)
+			{
+				if(digits[pointer] == 9)
+				{
+					digits[pointer] = 0;
+				}
+				else
+				{
+					digits[pointer] = digits[pointer] + 1;
+					return digits;
+				}
+				pointer--;
+			}
+
+			// position 0 had a 9 so we need to copy to a new array;
+			int[] newDigits = new int[digits.Length + 1];
+			Array.Copy(digits, 0, newDigits, 1, digits.Length);
+			newDigits[0] = 1;
+			return newDigits; 
 		}
 	}
 }

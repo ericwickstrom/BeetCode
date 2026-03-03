@@ -146,15 +146,15 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 24**
+**Total Solved: 25**
 
 | Set | Progress |
 |-----|----------|
-| 🅱️ Blind 150 | 14 / 148 |
+| 🅱️ Blind 150 | 15 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 24 / 42)
+## 🟢 Easy (42 problems — 25 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -232,7 +232,7 @@ MIT License - Practice away! 🚀
 ### Math & Geometry
 ✅ 202 · Happy Number 🅱️
 
-🔲 66 · Plus One 🅱️
+✅ 66 · Plus One 🅱️
 
 ✅ 9 · Palindrome Number
 
