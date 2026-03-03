@@ -81,6 +81,10 @@ namespace BeetCode
                     }
                     break;
 
+                case "report":
+                    ReadmeReporter.UpdateReadme();
+                    break;
+
                 case "help":
                     ShowHelp();
                     break;
@@ -334,6 +338,7 @@ namespace BeetCode
             Console.WriteLine("  update-data         Re-download LeetCode problem data");
             Console.WriteLine("  reset <number>      Reset one problem's solution");
             Console.WriteLine("  reset               Reset ALL problem solutions");
+            Console.WriteLine("  report              Update README.md with solve status");
             Console.WriteLine("  help                Show this help message");
             Console.WriteLine();
             Console.WriteLine("Examples:");
