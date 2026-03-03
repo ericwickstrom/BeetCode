@@ -50,16 +50,16 @@ namespace BeetCode.Problems
 			return new List<TestCase>
 			{
 				new TestCase("Example 1",
-					new object[] { /* TODO: 1 */ },
-					null /* TODO: &quot;A&quot; */),
+					new object[] { 1 },
+					"A"),
 
 				new TestCase("Example 2",
-					new object[] { /* TODO: 28 */ },
-					null /* TODO: &quot;AB&quot; */),
+					new object[] { 28 },
+					"AB"),
 
 				new TestCase("Example 3",
-					new object[] { /* TODO: 701 */ },
-					null /* TODO: &quot;ZY&quot; */),
+					new object[] { 701 },
+					"ZY"),
 
 				// TODO: Add edge cases beyond LeetCode examples
 			};
