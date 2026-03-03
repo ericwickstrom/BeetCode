@@ -99,6 +99,12 @@ namespace BeetCode.Framework
                 return AreLinkedListsEqual(actualList, expectedList);
             }
 
+            // Handle TreeNode comparisons
+            if (actual is TreeNode actualTree && expected is TreeNode expectedTree)
+            {
+                return AreTreesEqual(actualTree, expectedTree);
+            }
+
             // Handle arrays
             if (actual is Array actualArray && expected is Array expectedArray)
             {
@@ -106,6 +112,15 @@ namespace BeetCode.Framework
             }
 
             return actual.Equals(expected);
+        }
+
+        private static bool AreTreesEqual(TreeNode node1, TreeNode node2)
+        {
+            if (node1 == null && node2 == null) return true;
+            if (node1 == null || node2 == null) return false;
+            return node1.val == node2.val
+                && AreTreesEqual(node1.left, node2.left)
+                && AreTreesEqual(node1.right, node2.right);
         }
 
         private static bool AreLinkedListsEqual(ListNode list1, ListNode list2)
@@ -130,6 +145,12 @@ namespace BeetCode.Framework
             {
                 return FormatLinkedList(listNode);
             }
+
+            // Handle TreeNode display
+            if (result is TreeNode treeNode)
+            {
+                return FormatTree(treeNode);
+            }
             
             if (result is Array array)
             {
@@ -152,6 +173,38 @@ namespace BeetCode.Framework
                 current = current.next;
             }
             
+            return "[" + string.Join(", ", values) + "]";
+        }
+
+        private static string FormatTree(TreeNode root)
+        {
+            if (root == null) return "[]";
+
+            List<string> values = new List<string>();
+            Queue<TreeNode> queue = new Queue<TreeNode>();
+            queue.Enqueue(root);
+
+            while (queue.Count > 0)
+            {
+                TreeNode node = queue.Dequeue();
+                if (node == null)
+                {
+                    values.Add("null");
+                }
+                else
+                {
+                    values.Add(node.val.ToString());
+                    queue.Enqueue(node.left);
+                    queue.Enqueue(node.right);
+                }
+            }
+
+            // Trim trailing nulls
+            while (values.Count > 0 && values[values.Count - 1] == "null")
+            {
+                values.RemoveAt(values.Count - 1);
+            }
+
             return "[" + string.Join(", ", values) + "]";
         }
 

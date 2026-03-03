@@ -179,7 +179,8 @@ MIT License - Practice away! 🚀
 ✅ 21 · Merge Two Sorted Lists
 
 ### Trees
-- [ ] 226 · Invert Binary Tree
+- ✅ 226 · Invert Binary Tree
+
 - [ ] 104 · Maximum Depth of Binary Tree
 - [ ] 543 · Diameter of Binary Tree
 - [ ] 110 · Balanced Binary Tree

@@ -58,6 +58,12 @@ namespace BeetCode.Framework
                 return AreLinkedListsEqual(actualList, expectedList);
             }
 
+            // Handle TreeNode comparisons
+            if (actual is TreeNode actualTree && expected is TreeNode expectedTree)
+            {
+                return AreTreesEqual(actualTree, expectedTree);
+            }
+
             // Handle arrays
             if (actual is Array actualArray && expected is Array expectedArray)
             {
@@ -80,6 +86,47 @@ namespace BeetCode.Framework
             
             // Both should be null at the end
             return list1 == null && list2 == null;
+        }
+
+        private bool AreTreesEqual(TreeNode node1, TreeNode node2)
+        {
+            if (node1 == null && node2 == null) return true;
+            if (node1 == null || node2 == null) return false;
+            return node1.val == node2.val
+                && AreTreesEqual(node1.left, node2.left)
+                && AreTreesEqual(node1.right, node2.right);
+        }
+
+        // Helper method to create a binary tree from level-order array
+        protected TreeNode? CreateTree(int?[] values)
+        {
+            if (values == null || values.Length == 0 || values[0] == null) return null;
+
+            TreeNode root = new TreeNode(values[0].Value);
+            Queue<TreeNode> queue = new Queue<TreeNode>();
+            queue.Enqueue(root);
+            int i = 1;
+
+            while (i < values.Length && queue.Count > 0)
+            {
+                TreeNode current = queue.Dequeue();
+
+                if (i < values.Length && values[i] != null)
+                {
+                    current.left = new TreeNode(values[i].Value);
+                    queue.Enqueue(current.left);
+                }
+                i++;
+
+                if (i < values.Length && values[i] != null)
+                {
+                    current.right = new TreeNode(values[i].Value);
+                    queue.Enqueue(current.right);
+                }
+                i++;
+            }
+
+            return root;
         }
 
         // Helper method to convert linked list to array for display
