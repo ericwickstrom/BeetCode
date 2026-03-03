@@ -1075,8 +1075,8 @@ namespace BeetCode.Framework
 			int count = Math.Min(inputMatches.Count, outputMatches.Count);
 			for (int i = 0; i < count; i++)
 			{
-				string input = Regex.Replace(inputMatches[i].Groups[1].Value.Trim(), @"<[^>]+>", "").Trim();
-				string output = Regex.Replace(outputMatches[i].Groups[1].Value.Trim(), @"<[^>]+>", "").Trim();
+				string input = System.Net.WebUtility.HtmlDecode(Regex.Replace(inputMatches[i].Groups[1].Value.Trim(), @"<[^>]+>", "").Trim());
+				string output = System.Net.WebUtility.HtmlDecode(Regex.Replace(outputMatches[i].Groups[1].Value.Trim(), @"<[^>]+>", "").Trim());
 				examples.Add((input, output));
 			}
 
