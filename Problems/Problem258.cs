@@ -70,8 +70,19 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int AddDigits(int num)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            while(num > 9)
+            {
+                int sum = 0;
+                int n = num;
+                while(n > 0)
+                {
+                    int digit = n % 10;
+                    sum = sum + digit;
+                    n = n / 10;
+                }
+                num = sum;
+            }
+            return num;
         }
     }
 }

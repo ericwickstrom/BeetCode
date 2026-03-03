@@ -146,7 +146,7 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 23**
+**Total Solved: 24**
 
 | Set | Progress |
 |-----|----------|
@@ -154,7 +154,7 @@ MIT License - Practice away! 🚀
 
 ---
 
-## 🟢 Easy (42 problems — 23 / 42)
+## 🟢 Easy (42 problems — 24 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -236,7 +236,7 @@ MIT License - Practice away! 🚀
 
 ✅ 9 · Palindrome Number
 
-🔲 258 · Add Digits
+✅ 258 · Add Digits
 
 ✅ 412 · Fizz Buzz
 
