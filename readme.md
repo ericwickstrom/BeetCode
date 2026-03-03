@@ -146,11 +146,11 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Completed: 14 / 150**
+**Completed: 15 / 150**
 
 ---
 
-## 🟢 Easy (35 problems — 14 / 35)
+## 🟢 Easy (35 problems — 15 / 35)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate
@@ -179,8 +179,7 @@ MIT License - Practice away! 🚀
 ✅ 21 · Merge Two Sorted Lists
 
 ### Trees
-- ✅ 226 · Invert Binary Tree
-
+✅ 226 · Invert Binary Tree
 - [ ] 104 · Maximum Depth of Binary Tree
 - [ ] 543 · Diameter of Binary Tree
 - [ ] 110 · Balanced Binary Tree
