@@ -36,7 +36,7 @@ namespace BeetCode.Framework
 			var difficultyHeaderIndex = new Dictionary<string, int>();
 
 			// Regex for problem lines: ✅ or - [ ] followed by number · title (possibly with trailing emoji tags)
-			var problemPattern = new Regex(@"^(✅|- \[ \]) (\d+) · (.+)$");
+			var problemPattern = new Regex(@"^(✅|🔲|- \[ \]) (\d+) · (.+)$");
 			// Regex for difficulty headers (use alternation for supplementary Unicode emojis)
 			var difficultyPattern = new Regex(@"^## (?:🟢|🟡|🔴) (Easy|Medium|Hard) \((\d+) problems — (\d+) / (\d+)\)$");
 			// Collect all known set emojis for stripping
@@ -65,7 +65,7 @@ namespace BeetCode.Framework
 					string title = StripTrailingEmojis(rawTitle, knownEmojis);
 
 					bool solved = solvedNumbers.Contains(number);
-					string prefix = solved ? "✅" : "- [ ]";
+					string prefix = solved ? "✅" : "🔲";
 
 					// Build tag suffix
 					string tags = "";
@@ -101,6 +101,27 @@ namespace BeetCode.Framework
 
 			// Update summary section
 			UpdateSummarySection(lines, solvedNumbers, problemSets);
+
+			// Remove blank lines between consecutive problem entries
+			for (int i = lines.Count - 1; i >= 0; i--)
+			{
+				if (!string.IsNullOrWhiteSpace(lines[i]))
+					continue;
+
+				int prev = i - 1;
+				while (prev >= 0 && string.IsNullOrWhiteSpace(lines[prev]))
+					prev--;
+
+				int next = i + 1;
+				while (next < lines.Count && string.IsNullOrWhiteSpace(lines[next]))
+					next++;
+
+				bool prevIsProblem = prev >= 0 && problemPattern.IsMatch(lines[prev]);
+				bool nextIsProblem = next < lines.Count && problemPattern.IsMatch(lines[next]);
+
+				if (prevIsProblem && nextIsProblem)
+					lines.RemoveAt(i);
+			}
 
 			File.WriteAllLines(readmePath, lines);
 
