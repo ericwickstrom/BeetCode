@@ -146,11 +146,11 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Completed: 15 / 150**
+**Completed: 14 / 150**
 
 ---
 
-## 🟢 Easy (35 problems — 15 / 35)
+## 🟢 Easy (35 problems — 14 / 35)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate
@@ -172,7 +172,7 @@ MIT License - Practice away! 🚀
 ✅ 704 · Binary Search
 
 ### Linked List
-✅ 206 · Reverse Linked List
+- [ ] 206 · Reverse Linked List
 
 ✅ 141 · Linked List Cycle
 
