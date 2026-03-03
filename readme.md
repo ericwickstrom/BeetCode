@@ -154,7 +154,7 @@ MIT License - Practice away! 🚀
 
 ---
 
-## 🟢 Easy (28 problems — 14 / 28)
+## 🟢 Easy (42 problems — 22 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -162,15 +162,27 @@ MIT License - Practice away! 🚀
 ✅ 242 · Valid Anagram 🅱️
 
 ✅ 1 · Two Sum 🅱️
+✅ 26 · Remove Duplicates from Sorted Array
+✅ 27 · Remove Element
+- [ ] 383 · Ransom Note
+✅ 414 · Third Maximum Number
 
 ### Two Pointers
 ✅ 125 · Valid Palindrome 🅱️
+- [ ] 344 · Reverse String
 
 ### Sliding Window
 ✅ 121 · Best Time to Buy and Sell Stock 🅱️
 
 ### Stack
 ✅ 20 · Valid Parentheses 🅱️
+
+### Strings
+- [ ] 13 · Roman to Integer
+✅ 14 · Longest Common Prefix
+✅ 28 · Find the Index of the First Occurrence in a String
+✅ 58 · Length of Last Word
+- [ ] 168 · Excel Sheet Column Title
 
 ### Binary Search
 ✅ 704 · Binary Search 🅱️
@@ -205,6 +217,9 @@ MIT License - Practice away! 🚀
 ### Math & Geometry
 ✅ 202 · Happy Number 🅱️
 - [ ] 66 · Plus One 🅱️
+✅ 9 · Palindrome Number
+- [ ] 258 · Add Digits
+✅ 412 · Fizz Buzz
 
 ### Bit Manipulation
 ✅ 136 · Single Number 🅱️
@@ -212,6 +227,7 @@ MIT License - Practice away! 🚀
 - [ ] 338 · Counting Bits 🅱️
 - [ ] 190 · Reverse Bits 🅱️
 - [ ] 268 · Missing Number 🅱️
+- [ ] 389 · Find the Difference
 
 ---
 
