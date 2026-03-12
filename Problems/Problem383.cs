@@ -82,8 +82,26 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool CanConstruct(string ransomNote, string magazine)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            if(ransomNote == null || magazine == null || ransomNote.Length > magazine.Length) return false;
+
+            int[] letters = new int[26];
+
+            foreach(char c in magazine)
+            {
+                letters[c - 'a']++;
+            }
+
+            foreach(char c in ransomNote)
+            {
+                letters[c - 'a']--;
+            }
+
+            foreach(int count in letters)
+            {
+                if(count < 0) return false;
+            }
+
+            return true;
         }
     }
 }

@@ -146,7 +146,7 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 26**
+**Total Solved: 27**
 
 | Set | Progress |
 |-----|----------|
@@ -154,7 +154,7 @@ MIT License - Practice away! 🚀
 
 ---
 
-## 🟢 Easy (42 problems — 26 / 42)
+## 🟢 Easy (42 problems — 27 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -167,7 +167,7 @@ MIT License - Practice away! 🚀
 
 ✅ 27 · Remove Element
 
-🔲 383 · Ransom Note
+✅ 383 · Ransom Note
 
 ✅ 414 · Third Maximum Number
 
