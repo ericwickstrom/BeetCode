@@ -146,7 +146,7 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 25**
+**Total Solved: 26**
 
 | Set | Progress |
 |-----|----------|
@@ -154,7 +154,7 @@ MIT License - Practice away! 🚀
 
 ---
 
-## 🟢 Easy (42 problems — 25 / 42)
+## 🟢 Easy (42 problems — 26 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -191,7 +191,7 @@ MIT License - Practice away! 🚀
 
 ✅ 58 · Length of Last Word
 
-🔲 168 · Excel Sheet Column Title
+✅ 168 · Excel Sheet Column Title
 
 ### Binary Search
 ✅ 704 · Binary Search 🅱️
