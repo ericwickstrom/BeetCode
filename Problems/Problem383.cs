@@ -93,7 +93,14 @@ namespace BeetCode.Problems
 
             foreach(char c in ransomNote)
             {
-                letters[c - 'a']--;
+                if (--letters[c - 'a'] < 0) return false;
+                /*  from the solution:
+                    could be faster with the following:
+                 
+                 if (--letters[c - 'a'] < 0) return false;
+                    
+                    then remove the following loop
+                 */
             }
 
             foreach(int count in letters)
