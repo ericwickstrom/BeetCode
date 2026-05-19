@@ -88,25 +88,8 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int Search(int[] nums, int target)
         {
-            if (nums == null || nums.Length == 0) return -1;
-            int low = 0;
-            int high = nums.Length - 1;
-
-            while(low <= high)
-            {
-                int mid = low + (high - low) /  2;
-                if(nums[mid] == target) return mid;
-
-                if(target < nums[mid])
-                {
-                    high = mid - 1;
-                }
-                else
-                {
-                    low = mid + 1;
-                }
-            }
-            return -1;
+            // TODO: Implement your solution
+            throw new NotImplementedException();
         }
     }
 }

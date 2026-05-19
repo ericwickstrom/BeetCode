@@ -63,12 +63,8 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int SingleNumber(int[] nums)
         {
-            int result = 0;
-            foreach(int num in nums)
-            {
-                result = result ^ num;
-            }
-            return result;
+            // TODO: Implement your solution
+            throw new NotImplementedException();
         }
     }
 }

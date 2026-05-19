@@ -82,33 +82,8 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool CanConstruct(string ransomNote, string magazine)
         {
-            if(ransomNote == null || magazine == null || ransomNote.Length > magazine.Length) return false;
-
-            int[] letters = new int[26];
-
-            foreach(char c in magazine)
-            {
-                letters[c - 'a']++;
-            }
-
-            foreach(char c in ransomNote)
-            {
-                if (--letters[c - 'a'] < 0) return false;
-                /*  from the solution:
-                    could be faster with the following:
-                 
-                 if (--letters[c - 'a'] < 0) return false;
-                    
-                    then remove the following loop
-                 */
-            }
-
-            foreach(int count in letters)
-            {
-                if(count < 0) return false;
-            }
-
-            return true;
+            // TODO: Implement your solution
+            throw new NotImplementedException();
         }
     }
 }

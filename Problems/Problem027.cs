@@ -86,20 +86,8 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public int RemoveElement(int[] nums, int val)
 		{
-			if(nums == null || nums.Length == 0) return 0;
-
-			int l = 0;
-			int r = 0;
-			while(r < nums.Length)
-			{
-				if(nums[r] != val)
-				{
-					nums[l] = nums[r];
-					l++;
-				}
-				r++;	
-			}
-			return l;
+		    // TODO: Implement your solution
+		    throw new NotImplementedException();
 		}
 	}
 }

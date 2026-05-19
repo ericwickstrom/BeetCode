@@ -129,19 +129,8 @@ namespace BeetCode.Problems
 
 			public int Add(int val)
 			{
-				if(_pq.Count < _size)
-				{
-					_pq.Enqueue(val,val);
-				}
-				else
-				{
-					int root = _pq.Peek();
-					if(val > root)
-					{
-						_pq.DequeueEnqueue(val,val);
-					}
-				}
-				return _pq.Peek();
+			    // TODO: Implement your solution
+			    throw new NotImplementedException();
 			}
 		}
 	}

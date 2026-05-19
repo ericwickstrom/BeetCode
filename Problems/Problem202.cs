@@ -75,23 +75,8 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsHappy(int n)
         {
-            HashSet<int> previous = new HashSet<int>();
-
-            while (true)
-            {  
-                int sum = 0;
-                int i = n;
-                while (i > 0)
-                {
-                    int digit = i % 10;
-                    sum += digit * digit;
-                    i /= 10;
-                }
-
-                if(sum == 1) return true;
-                if(!previous.Add(sum)) return false;
-                n = sum;
-            }
+            // TODO: Implement your solution
+            throw new NotImplementedException();
         }
     }
 }

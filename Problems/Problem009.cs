@@ -70,28 +70,8 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsPalindrome(int x)
         {
-            // // string solution
-            // var str = x.ToString();
-            // int l = 0;
-            // int r = str.Length - 1;
-            // while(l < r)
-            // {
-            //     if(str[l] != str[r]) return false;
-            //     l++;
-            //     r--;
-            // }
-            // return true;
-
-            // // fancy math solution
-            int original = x;
-            int reversed = 0;
-            while (x > 0)
-            {
-                reversed = reversed * 10 + x % 10;
-                x /= 10;
-            }
-
-            return reversed == original;
+            // TODO: Implement your solution
+            throw new NotImplementedException();
         }
     }
 }

@@ -89,34 +89,8 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public string LongestCommonPrefix(string[] strs)
         {
-            if(strs.Length == 0) return "";
-            foreach(string s in strs)
-            {
-                if(s == null || s.Length == 0) return "";
-            }
-
-            int length = 0;
-            bool equal = true;
-
-            while (equal && length < strs[0].Length)
-            {
-                for(int i = 1; i < strs.Length; i++)
-                {
-                    if(length >= strs[i].Length)
-                    {
-                        equal = false;
-                        break;
-                    }
-                    if(strs[0][length] != strs[i][length])
-                    {
-                        equal = false;
-                        break;
-                    }
-                }
-                if(equal) length++;
-            }
-            
-            return strs[0].Substring(0,length);
+            // TODO: Implement your solution
+            throw new NotImplementedException();
         }
     }
 }

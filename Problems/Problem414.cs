@@ -77,34 +77,8 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public int ThirdMax(int[] nums)
 		{
-			if (nums == null || nums.Length == 0) return 0;
-
-			long first = long.MinValue;
-			long second = long.MinValue;
-			long third = long.MinValue;
-
-			foreach (int num in nums)
-			{
-				if(num == first || num == second || num == third) continue;
-				
-				if (num > first)
-				{
-					third = second;
-					second = first;
-					first = num;
-				}
-				else if (num > second)
-				{
-					third = second;
-					second = num;
-				}
-				else if (num > third)
-				{
-					third = num;
-				}
-			}
-
-			return third == long.MinValue ? (int)first : (int)third;
+		    // TODO: Implement your solution
+		    throw new NotImplementedException();
 		}
 	}
 }

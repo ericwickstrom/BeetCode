@@ -59,19 +59,8 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int[] TwoSum(int[] nums, int target)
         {
-            Dictionary<int,int> map = new Dictionary<int, int>();
-
-            for(int i = 0; i < nums.Length; i++)
-            {
-                int num = target - nums[i];
-                if(map.TryGetValue(num, out int key))
-                {
-                    return new int[] {key, i};
-                }
-                map[nums[i]] = i;
-            }
-
-            return new int[]{};
+            // TODO: Implement your solution
+            throw new NotImplementedException();
         }
     }
 }

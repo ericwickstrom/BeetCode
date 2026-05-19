@@ -74,15 +74,8 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public string ConvertToTitle(int columnNumber)
 		{
-			string column = "";
-			while(columnNumber > 0)
-			{
-				columnNumber--;
-				char c = (char)('A' + (columnNumber % 26));
-				column = c + column;
-				columnNumber /= 26;
-			}
-			return column;
+		    // TODO: Implement your solution
+		    throw new NotImplementedException();
 		}
 	}
 }

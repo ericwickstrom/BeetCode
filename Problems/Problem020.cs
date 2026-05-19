@@ -89,39 +89,9 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsValid(string s)
         {
-            if(s == null || s.Length == 0) return true;
-            Stack<char> stack = new Stack<char>();
-            foreach(char c in s)
-            {
-                if(c == ')' || c == ']' || c == '}')
-                {
-                    if(stack.TryPop(out char i))
-                    {
-                        switch (c)
-                        {
-                            case ')':
-                                if(i != '(') return false;
-                                break;
-                            case ']':
-                                if(i != '[') return false;
-                                break;
-                            case '}':
-                                if(i != '{') return false;
-                                break;
-                            default:
-                                break;
-                        }
-                    }
-                    else
-                    {
-                        return false; // stack shouldn't be empty
-                    }
-                }
-                else
-                {
-                    stack.Push(c);
-                }
-            }
+            // TODO: Implement your solution
+            throw new NotImplementedException();
+        }
             return stack.Count == 0;
         }
     }
