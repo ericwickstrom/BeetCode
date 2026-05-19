@@ -14,7 +14,7 @@ A local C# console application for practicing LeetCode problems in your own IDE.
 ## 🚀 Quick Start
 
 ### Prerequisites
-- .NET 8.0 SDK
+- .NET 10.0 SDK
 - VS Code (recommended)
 
 ### Installation
@@ -146,65 +146,65 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 27**
+**Total Solved: 0**
 
 | Set | Progress |
 |-----|----------|
-| 🅱️ Blind 150 | 15 / 148 |
+| 🅱️ Blind 150 | 0 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 27 / 42)
+## 🟢 Easy (42 problems — 0 / 42)
 
 ### Arrays & Hashing
-✅ 217 · Contains Duplicate 🅱️
+🔲 217 · Contains Duplicate 🅱️
 
-✅ 242 · Valid Anagram 🅱️
+🔲 242 · Valid Anagram 🅱️
 
-✅ 1 · Two Sum 🅱️
+🔲 1 · Two Sum 🅱️
 
-✅ 26 · Remove Duplicates from Sorted Array
+🔲 26 · Remove Duplicates from Sorted Array
 
-✅ 27 · Remove Element
+🔲 27 · Remove Element
 
-✅ 383 · Ransom Note
+🔲 383 · Ransom Note
 
-✅ 414 · Third Maximum Number
+🔲 414 · Third Maximum Number
 
 ### Two Pointers
-✅ 125 · Valid Palindrome 🅱️
+🔲 125 · Valid Palindrome 🅱️
 
-✅ 344 · Reverse String
+🔲 344 · Reverse String
 
 ### Sliding Window
-✅ 121 · Best Time to Buy and Sell Stock 🅱️
+🔲 121 · Best Time to Buy and Sell Stock 🅱️
 
 ### Stack
-✅ 20 · Valid Parentheses 🅱️
+🔲 20 · Valid Parentheses 🅱️
 
 ### Strings
 🔲 13 · Roman to Integer
 
-✅ 14 · Longest Common Prefix
+🔲 14 · Longest Common Prefix
 
-✅ 28 · Find the Index of the First Occurrence in a String
+🔲 28 · Find the Index of the First Occurrence in a String
 
-✅ 58 · Length of Last Word
+🔲 58 · Length of Last Word
 
-✅ 168 · Excel Sheet Column Title
+🔲 168 · Excel Sheet Column Title
 
 ### Binary Search
-✅ 704 · Binary Search 🅱️
+🔲 704 · Binary Search 🅱️
 
 ### Linked List
 🔲 206 · Reverse Linked List 🅱️
 
-✅ 141 · Linked List Cycle 🅱️
+🔲 141 · Linked List Cycle 🅱️
 
-✅ 21 · Merge Two Sorted Lists 🅱️
+🔲 21 · Merge Two Sorted Lists 🅱️
 
 ### Trees
-✅ 226 · Invert Binary Tree 🅱️
+🔲 226 · Invert Binary Tree 🅱️
 
 🔲 104 · Maximum Depth of Binary Tree 🅱️
 
@@ -217,9 +217,9 @@ MIT License - Practice away! 🚀
 🔲 572 · Subtree of Another Tree 🅱️
 
 ### Heap / Priority Queue
-✅ 703 · Kth Largest Element in a Stream 🅱️
+🔲 703 · Kth Largest Element in a Stream 🅱️
 
-✅ 1046 · Last Stone Weight 🅱️
+🔲 1046 · Last Stone Weight 🅱️
 
 ### 1-D Dynamic Programming
 🔲 70 · Climbing Stairs 🅱️
@@ -230,18 +230,18 @@ MIT License - Practice away! 🚀
 🔲 252 · Meeting Rooms *(Premium)* 🅱️
 
 ### Math & Geometry
-✅ 202 · Happy Number 🅱️
+🔲 202 · Happy Number 🅱️
 
-✅ 66 · Plus One 🅱️
+🔲 66 · Plus One 🅱️
 
-✅ 9 · Palindrome Number
+🔲 9 · Palindrome Number
 
-✅ 258 · Add Digits
+🔲 258 · Add Digits
 
-✅ 412 · Fizz Buzz
+🔲 412 · Fizz Buzz
 
 ### Bit Manipulation
-✅ 136 · Single Number 🅱️
+🔲 136 · Single Number 🅱️
 
 🔲 191 · Number of 1 Bits 🅱️
 
