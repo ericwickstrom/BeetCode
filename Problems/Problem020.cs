@@ -92,7 +92,5 @@ namespace BeetCode.Problems
             // TODO: Implement your solution
             throw new NotImplementedException();
         }
-            return stack.Count == 0;
-        }
     }
 }
