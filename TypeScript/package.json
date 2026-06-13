@@ -1,0 +1,14 @@
+{
+	"name": "beetcode-typescript",
+	"version": "1.0.0",
+	"description": "BeetCode TypeScript problem runner",
+	"scripts": {
+		"list": "tsx run.ts list",
+		"test": "tsx run.ts test",
+		"info": "tsx run.ts info"
+	},
+	"devDependencies": {
+		"tsx": "^4.0.0",
+		"typescript": "^5.0.0"
+	}
+}

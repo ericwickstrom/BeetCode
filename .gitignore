@@ -398,4 +398,7 @@ PROJECT.md
 temp_lc.json
 Framework/leetcode_data.json
 *.json
+!TypeScript/package.json
+!TypeScript/package-lock.json
+!TypeScript/tsconfig.json
 nul
