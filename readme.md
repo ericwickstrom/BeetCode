@@ -5,8 +5,9 @@ A local C# console application for practicing LeetCode problems in your own IDE.
 ## ✨ Features
 
 - **Local Development**: Write solutions in VS Code with all your favorite extensions
-- **Automatic Scaffolding**: Generate new problem files directly from LeetCode data with one command
-- **Automatic Testing**: Built-in test runner with formatted output
+- **Multi-Language Support**: Practice in C# or TypeScript — more languages can be added following the same pattern
+- **Automatic Scaffolding**: Generate new C# problem files directly from LeetCode data with one command
+- **Automatic Testing**: Built-in test runner with formatted output and performance stats
 - **Problem Management**: Easy CLI commands to run, test, and manage problems
 - **Solution Resetting**: Quickly reset one or all solutions back to their initial state
 - **Clean Output**: Pretty-printed test results with pass/fail status
