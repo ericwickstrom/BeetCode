@@ -59,8 +59,18 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int[] TwoSum(int[] nums, int target)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            Dictionary<int,int> dict = new Dictionary<int, int>();
+            for(int i = 0; i < nums.Length; i++)
+            {
+                int num = target - nums[i];
+                if (dict.TryGetValue(num, out int idx))
+                {
+                    return new int[] { idx, i};
+                }
+                
+                dict[nums[i]] = i;
+            }
+            return new int[]{};
         }
     }
 }
