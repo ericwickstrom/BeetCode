@@ -147,22 +147,22 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 0**
+**Total Solved: 1**
 
 | Set | Progress |
 |-----|----------|
-| 🅱️ Blind 150 | 0 / 148 |
+| 🅱️ Blind 150 | 1 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 0 / 42)
+## 🟢 Easy (42 problems — 1 / 42)
 
 ### Arrays & Hashing
 🔲 217 · Contains Duplicate 🅱️
 
 🔲 242 · Valid Anagram 🅱️
 
-🔲 1 · Two Sum 🅱️
+✅ 1 · Two Sum 🅱️
 
 🔲 26 · Remove Duplicates from Sorted Array
 
