@@ -147,15 +147,15 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 3**
+**Total Solved: 4**
 
 | Set | Progress |
 |-----|----------|
-| 🅱️ Blind 150 | 3 / 148 |
+| 🅱️ Blind 150 | 4 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 3 / 42)
+## 🟢 Easy (42 problems — 4 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -173,7 +173,7 @@ MIT License - Practice away! 🚀
 🔲 414 · Third Maximum Number
 
 ### Two Pointers
-🔲 125 · Valid Palindrome 🅱️
+✅ 125 · Valid Palindrome 🅱️
 
 🔲 344 · Reverse String
 
