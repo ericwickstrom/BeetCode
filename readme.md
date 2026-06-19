@@ -147,7 +147,7 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 6**
+**Total Solved: 7**
 
 | Set | Progress |
 |-----|----------|
@@ -155,7 +155,7 @@ MIT License - Practice away! 🚀
 
 ---
 
-## 🟢 Easy (42 problems — 6 / 42)
+## 🟢 Easy (42 problems — 7 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -239,7 +239,7 @@ MIT License - Practice away! 🚀
 
 🔲 258 · Add Digits
 
-🔲 412 · Fizz Buzz
+✅ 412 · Fizz Buzz
 
 ### Bit Manipulation
 🔲 136 · Single Number 🅱️

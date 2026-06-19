@@ -62,8 +62,27 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public string[] FizzBuzz(int n)
 		{
-		    // TODO: Implement your solution
-		    throw new NotImplementedException();
+			string[] strings = new string[n];
+
+			for (int i = 1; i < n + 1; i++)
+			{
+				string s = "";
+				if (i % 3 == 0)
+					s = "Fizz";
+				if (i % 5 == 0)
+					s = s + "Buzz";
+
+				if(s.Length == 0)
+				{
+					strings[i-1] = i.ToString();
+				}
+				else
+				{
+					strings[i-1] = s;
+				}
+			}
+
+			return strings;
 		}
 	}
 }
