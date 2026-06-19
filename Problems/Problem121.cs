@@ -79,8 +79,22 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public int MaxProfit(int[] prices)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            if(prices == null || prices.Length <= 1) return 0;
+            
+            int low = int.MaxValue;
+            int profit = 0;
+
+            for(int i = 0; i < prices.Length; i++)
+            {
+                if(prices[i]  < low)
+                    low = prices[i];
+
+                int newProfit = prices[i] - low;
+                if(newProfit > profit)
+                    profit = newProfit;
+            }
+
+            return profit;
         }
     }
 }
