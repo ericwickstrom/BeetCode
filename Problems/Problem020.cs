@@ -8,7 +8,7 @@ namespace BeetCode.Problems
         public override int Number => 20;
         public override string Title => "Valid Parentheses";
         public override string Difficulty => "Easy";
-        public override string Description => 
+        public override string Description =>
             "Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.\n\n" +
             "An input string is valid if:\n" +
             "1. Open brackets must be closed by the same type of brackets.\n" +
@@ -31,52 +31,52 @@ namespace BeetCode.Problems
         {
             return new List<TestCase>
             {
-                new TestCase("Example 1 - Simple pair", 
-                    new object[] { "()" }, 
-                    true),
-                
-                new TestCase("Example 2 - Multiple types", 
-                    new object[] { "()[]{}" }, 
-                    true),
-                
-                new TestCase("Example 3 - Wrong order", 
-                    new object[] { "(]" }, 
-                    false),
-
-                new TestCase("Nested brackets", 
-                    new object[] { "([{}])" }, 
+                new TestCase("Example 1 - Simple pair",
+                    new object[] { "()" },
                     true),
 
-                new TestCase("Wrong closing", 
-                    new object[] { "([)]" }, 
-                    false),
-
-                new TestCase("Only opening", 
-                    new object[] { "(((" }, 
-                    false),
-
-                new TestCase("Only closing", 
-                    new object[] { ")))" }, 
-                    false),
-
-                new TestCase("Empty string", 
-                    new object[] { "" }, 
+                new TestCase("Example 2 - Multiple types",
+                    new object[] { "()[]{}" },
                     true),
 
-                new TestCase("Complex valid", 
-                    new object[] { "()[]{}(())" }, 
+                new TestCase("Example 3 - Wrong order",
+                    new object[] { "(]" },
+                    false),
+
+                new TestCase("Nested brackets",
+                    new object[] { "([{}])" },
                     true),
 
-                new TestCase("Complex invalid", 
-                    new object[] { "()[]{}(()" }, 
+                new TestCase("Wrong closing",
+                    new object[] { "([)]" },
                     false),
 
-                new TestCase("Single opening", 
-                    new object[] { "(" }, 
+                new TestCase("Only opening",
+                    new object[] { "(((" },
                     false),
 
-                new TestCase("Single closing", 
-                    new object[] { ")" }, 
+                new TestCase("Only closing",
+                    new object[] { ")))" },
+                    false),
+
+                new TestCase("Empty string",
+                    new object[] { "" },
+                    true),
+
+                new TestCase("Complex valid",
+                    new object[] { "()[]{}(())" },
+                    true),
+
+                new TestCase("Complex invalid",
+                    new object[] { "()[]{}(()" },
+                    false),
+
+                new TestCase("Single opening",
+                    new object[] { "(" },
+                    false),
+
+                new TestCase("Single closing",
+                    new object[] { ")" },
                     false)
             };
         }
@@ -89,8 +89,37 @@ namespace BeetCode.Problems
         // YOUR SOLUTION GOES HERE
         public bool IsValid(string s)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            Stack<char> stack = new Stack<char>();
+            foreach (char c in s)
+            {
+                if (c == '{' || c == '[' || c == '(')
+                {
+                    stack.Push(c);
+                }
+                else if (c == '}' || c == ']' || c == ')')
+                {
+                    if(stack.Count == 0) return false;
+                    char ch = stack.Pop();
+                    switch (c)
+                    {
+                        case ')':
+                            if(ch != '(') return false;
+                            break;
+                        
+                        case '}':
+                            if(ch != '{') return false;
+                            break;
+
+                        case ']':
+                            if(ch != '[') return false;
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+            }
+            return stack.Count == 0;
         }
     }
 }

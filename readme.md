@@ -147,15 +147,15 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 4**
+**Total Solved: 5**
 
 | Set | Progress |
 |-----|----------|
-| 🅱️ Blind 150 | 4 / 148 |
+| 🅱️ Blind 150 | 5 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 4 / 42)
+## 🟢 Easy (42 problems — 5 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -181,7 +181,7 @@ MIT License - Practice away! 🚀
 🔲 121 · Best Time to Buy and Sell Stock 🅱️
 
 ### Stack
-🔲 20 · Valid Parentheses 🅱️
+✅ 20 · Valid Parentheses 🅱️
 
 ### Strings
 🔲 13 · Roman to Integer
