@@ -147,15 +147,15 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 7**
+**Total Solved: 8**
 
 | Set | Progress |
 |-----|----------|
-| 🅱️ Blind 150 | 6 / 148 |
+| 🅱️ Blind 150 | 7 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 7 / 42)
+## 🟢 Easy (42 problems — 8 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -195,7 +195,7 @@ MIT License - Practice away! 🚀
 🔲 168 · Excel Sheet Column Title
 
 ### Binary Search
-🔲 704 · Binary Search 🅱️
+✅ 704 · Binary Search 🅱️
 
 ### Linked List
 🔲 206 · Reverse Linked List 🅱️
