@@ -1,5 +1,6 @@
 using BeetCode.Framework;
 using System.Collections.Generic;
+using System.Xml;
 
 namespace BeetCode.Problems
 {
@@ -52,11 +53,28 @@ namespace BeetCode.Problems
             return LinkedListToArray(result);
         }
 
+        /*
+            head.next -> n.next
+            temp = head
+
+        */
+
         // YOUR SOLUTION GOES HERE
         public ListNode ReverseList(ListNode head)
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            if(head == null) return null;
+            
+            ListNode previous = null;
+            ListNode current = head;
+
+            while(current != null)
+            {
+                ListNode next = current.next;
+                current.next = previous;
+                previous = current;
+                current = next;
+            }
+            return previous;
         }
     }
 }
