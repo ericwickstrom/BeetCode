@@ -147,15 +147,15 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 10**
+**Total Solved: 11**
 
 | Set | Progress |
 |-----|----------|
-| 🅱️ Blind 150 | 9 / 148 |
+| 🅱️ Blind 150 | 10 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 10 / 42)
+## 🟢 Easy (42 problems — 11 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -202,7 +202,7 @@ MIT License - Practice away! 🚀
 
 ✅ 141 · Linked List Cycle 🅱️
 
-🔲 21 · Merge Two Sorted Lists 🅱️
+✅ 21 · Merge Two Sorted Lists 🅱️
 
 ### Trees
 🔲 226 · Invert Binary Tree 🅱️
