@@ -147,15 +147,15 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 12**
+**Total Solved: 13**
 
 | Set | Progress |
 |-----|----------|
-| 🅱️ Blind 150 | 11 / 148 |
+| 🅱️ Blind 150 | 12 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 12 / 42)
+## 🟢 Easy (42 problems — 13 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -220,7 +220,7 @@ MIT License - Practice away! 🚀
 ### Heap / Priority Queue
 ✅ 703 · Kth Largest Element in a Stream 🅱️
 
-🔲 1046 · Last Stone Weight 🅱️
+✅ 1046 · Last Stone Weight 🅱️
 
 ### 1-D Dynamic Programming
 🔲 70 · Climbing Stairs 🅱️
