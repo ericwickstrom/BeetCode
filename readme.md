@@ -147,15 +147,15 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 13**
+**Total Solved: 14**
 
 | Set | Progress |
 |-----|----------|
-| 🅱️ Blind 150 | 12 / 148 |
+| 🅱️ Blind 150 | 13 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 13 / 42)
+## 🟢 Easy (42 problems — 14 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -207,7 +207,7 @@ MIT License - Practice away! 🚀
 ### Trees
 🔲 226 · Invert Binary Tree 🅱️
 
-🔲 104 · Maximum Depth of Binary Tree 🅱️
+✅ 104 · Maximum Depth of Binary Tree 🅱️
 
 🔲 543 · Diameter of Binary Tree 🅱️
 

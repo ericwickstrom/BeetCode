@@ -64,8 +64,10 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public int MaxDepth(TreeNode? root)
 		{
-			// TODO: Implement your solution
-			throw new NotImplementedException();
+			if(root == null) return 0;
+			int l = 1 + MaxDepth(root.left);
+			int r = 1 + MaxDepth(root.right);
+			return l > r ? l : r;
 		}
 	}
 }
