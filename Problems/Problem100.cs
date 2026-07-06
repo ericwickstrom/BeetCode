@@ -75,8 +75,11 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public bool IsSameTree(TreeNode? p, TreeNode? q)
 		{
-			// TODO: Implement your solution
-			throw new NotImplementedException();
+			if(p == null && q == null) return true;
+			if((p == null && q != null) || (p != null && q == null))  return false;
+			if(p.val != q.val) return false;
+
+			return IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
 		}
 	}
 }
