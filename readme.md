@@ -147,15 +147,15 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 14**
+**Total Solved: 15**
 
 | Set | Progress |
 |-----|----------|
-| 🅱️ Blind 150 | 13 / 148 |
+| 🅱️ Blind 150 | 14 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 14 / 42)
+## 🟢 Easy (42 problems — 15 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -213,7 +213,7 @@ MIT License - Practice away! 🚀
 
 🔲 110 · Balanced Binary Tree 🅱️
 
-🔲 100 · Same Tree 🅱️
+✅ 100 · Same Tree 🅱️
 
 🔲 572 · Subtree of Another Tree 🅱️
 
