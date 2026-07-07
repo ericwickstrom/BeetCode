@@ -65,8 +65,12 @@ namespace BeetCode.Problems
 		// YOUR SOLUTION GOES HERE
 		public TreeNode InvertTree(TreeNode root)
 		{
-		    // TODO: Implement your solution
-		    throw new NotImplementedException();
+			if(root == null) return null;
+			InvertTree(root.left);
+			InvertTree(root.right);
+
+			(root.left, root.right) = (root.right, root.left);
+			return root;
 		}
 	}
 }
