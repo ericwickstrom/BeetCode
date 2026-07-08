@@ -63,15 +63,18 @@ namespace BeetCode.Problems
             var result = new char[inputArray.Length];
             Array.Copy(inputArray, result, inputArray.Length);
             
-            ReverseString(result);
+            new Solution().ReverseString(result);
             return result;
         }
 
-        // YOUR SOLUTION GOES HERE
-        public void ReverseString(char[] s)
+        public class Solution
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            // YOUR SOLUTION GOES HERE
+            public void ReverseString(char[] s)
+            {
+                // TODO: Implement your solution
+                throw new NotImplementedException();
+            }
         }
     }
 }

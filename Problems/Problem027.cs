@@ -66,7 +66,7 @@ namespace BeetCode.Problems
 		{
 			int[] nums = (int[])inputs[0];
 			int val = (int)inputs[1];
-			int k = RemoveElement(nums, val);
+			int k = new Solution().RemoveElement(nums, val);
 			int[] result = nums[..k];
 			Array.Sort(result);
 			return result;
@@ -83,11 +83,14 @@ namespace BeetCode.Problems
 			return base.AreEqual(expected, actual);
 		}
 
-		// YOUR SOLUTION GOES HERE
-		public int RemoveElement(int[] nums, int val)
+		public class Solution
 		{
-		    // TODO: Implement your solution
-		    throw new NotImplementedException();
+			// YOUR SOLUTION GOES HERE
+			public int RemoveElement(int[] nums, int val)
+			{
+			    // TODO: Implement your solution
+			    throw new NotImplementedException();
+			}
 		}
 	}
 }
