@@ -51,33 +51,42 @@ namespace BeetCode.Problems
 		{
 			return new List<TestCase>
 			{
-				// Input: grid = [
-				// Expected output: 1
 				new TestCase("Example 1",
-					new object[] { /* TODO */ },
-					null /* TODO */),
+					new object[] { new char[][]
+					{
+						new char[] { '1', '1', '1', '1', '0' },
+						new char[] { '1', '1', '0', '1', '0' },
+						new char[] { '1', '1', '0', '0', '0' },
+						new char[] { '0', '0', '0', '0', '0' }
+					} },
+					1),
 
-				// Input: grid = [
-				// Expected output: 3
 				new TestCase("Example 2",
-					new object[] { /* TODO */ },
-					null /* TODO */),
-
-				// TODO: Add edge cases beyond LeetCode examples
+					new object[] { new char[][]
+					{
+						new char[] { '1', '1', '0', '0', '0' },
+						new char[] { '1', '1', '0', '0', '0' },
+						new char[] { '0', '0', '1', '0', '0' },
+						new char[] { '0', '0', '0', '1', '1' }
+					} },
+					3),
 			};
 		}
 
 		public override object ExecuteSolution(object[] inputs)
 		{
-			// TODO: Cast inputs and call your solution method
-			throw new NotImplementedException();
+			char[][] grid = (char[][])inputs[0];
+			return new Solution().NumIslands(grid);
 		}
 
-		// YOUR SOLUTION GOES HERE
-		// TODO: Add your solution method
-		// public ReturnType MethodName(params)
-		// {
-		//     throw new NotImplementedException();
-		// }
+		public class Solution
+		{
+			// YOUR SOLUTION GOES HERE
+			public int NumIslands(char[][] grid)
+			{
+				// TODO: Implement your solution
+				throw new NotImplementedException();
+			}
+		}
 	}
 }

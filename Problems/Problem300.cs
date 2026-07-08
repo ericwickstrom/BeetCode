@@ -45,39 +45,34 @@ namespace BeetCode.Problems
 		{
 			return new List<TestCase>
 			{
-				// Input: nums = [10,9,2,5,3,7,101,18]
-				// Expected output: 4
 				new TestCase("Example 1",
-					new object[] { /* TODO */ },
-					null /* TODO */),
+					new object[] { new int[] { 10, 9, 2, 5, 3, 7, 101, 18 } },
+					4),
 
-				// Input: nums = [0,1,0,3,2,3]
-				// Expected output: 4
 				new TestCase("Example 2",
-					new object[] { /* TODO */ },
-					null /* TODO */),
+					new object[] { new int[] { 0, 1, 0, 3, 2, 3 } },
+					4),
 
-				// Input: nums = [7,7,7,7,7,7,7]
-				// Expected output: 1
 				new TestCase("Example 3",
-					new object[] { /* TODO */ },
-					null /* TODO */),
-
-				// TODO: Add edge cases beyond LeetCode examples
+					new object[] { new int[] { 7, 7, 7, 7, 7, 7, 7 } },
+					1),
 			};
 		}
 
 		public override object ExecuteSolution(object[] inputs)
 		{
-			// TODO: Cast inputs and call your solution method
-			throw new NotImplementedException();
+			int[] nums = (int[])inputs[0];
+			return new Solution().LengthOfLIS(nums);
 		}
 
-		// YOUR SOLUTION GOES HERE
-		// TODO: Add your solution method
-		// public ReturnType MethodName(params)
-		// {
-		//     throw new NotImplementedException();
-		// }
+		public class Solution
+		{
+			// YOUR SOLUTION GOES HERE
+			public int LengthOfLIS(int[] nums)
+			{
+				// TODO: Implement your solution
+				throw new NotImplementedException();
+			}
+		}
 	}
 }
