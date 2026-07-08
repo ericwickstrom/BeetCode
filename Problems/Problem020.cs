@@ -83,43 +83,46 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return IsValid((string)inputs[0]);
+            return new Solution().IsValid((string)inputs[0]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public bool IsValid(string s)
+        public class Solution
         {
-            Stack<char> stack = new Stack<char>();
-            foreach (char c in s)
+            // YOUR SOLUTION GOES HERE
+            public bool IsValid(string s)
             {
-                if (c == '{' || c == '[' || c == '(')
+                Stack<char> stack = new Stack<char>();
+                foreach (char c in s)
                 {
-                    stack.Push(c);
-                }
-                else if (c == '}' || c == ']' || c == ')')
-                {
-                    if(stack.Count == 0) return false;
-                    char ch = stack.Pop();
-                    switch (c)
+                    if (c == '{' || c == '[' || c == '(')
                     {
-                        case ')':
-                            if(ch != '(') return false;
-                            break;
-                        
-                        case '}':
-                            if(ch != '{') return false;
-                            break;
+                        stack.Push(c);
+                    }
+                    else if (c == '}' || c == ']' || c == ')')
+                    {
+                        if(stack.Count == 0) return false;
+                        char ch = stack.Pop();
+                        switch (c)
+                        {
+                            case ')':
+                                if(ch != '(') return false;
+                                break;
 
-                        case ']':
-                            if(ch != '[') return false;
-                            break;
+                            case '}':
+                                if(ch != '{') return false;
+                                break;
 
-                        default:
-                            break;
+                            case ']':
+                                if(ch != '[') return false;
+                                break;
+
+                            default:
+                                break;
+                        }
                     }
                 }
+                return stack.Count == 0;
             }
-            return stack.Count == 0;
         }
     }
 }

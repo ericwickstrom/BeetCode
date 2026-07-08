@@ -65,31 +65,34 @@ namespace BeetCode.Problems
 		public override object ExecuteSolution(object[] inputs)
 		{
 			int[] stones = (int[])inputs[0];
-			return LastStoneWeight(stones);
+			return new Solution().LastStoneWeight(stones);
 		}
 
-		// YOUR SOLUTION GOES HERE
-		public int LastStoneWeight(int[] stones)
+		public class Solution
 		{
-		    PriorityQueue<int,int> pq = new PriorityQueue<int, int>();
-			foreach(int stone in stones)
+			// YOUR SOLUTION GOES HERE
+			public int LastStoneWeight(int[] stones)
 			{
-				pq.Enqueue(stone, -1 * stone);
-			}
-
-			while(pq.Count > 1)
-			{
-				int y = pq.Dequeue();
-				int x = pq.Dequeue();
-				
-				if(x != y)
+			    PriorityQueue<int,int> pq = new PriorityQueue<int, int>();
+				foreach(int stone in stones)
 				{
-					int z = y - x;
-					pq.Enqueue(z, -1 * z);
+					pq.Enqueue(stone, -1 * stone);
 				}
-			}
 
-			return pq.Count == 0 ? 0 : pq.Dequeue();
+				while(pq.Count > 1)
+				{
+					int y = pq.Dequeue();
+					int x = pq.Dequeue();
+
+					if(x != y)
+					{
+						int z = y - x;
+						pq.Enqueue(z, -1 * z);
+					}
+				}
+
+				return pq.Count == 0 ? 0 : pq.Dequeue();
+			}
 		}
 	}
 }

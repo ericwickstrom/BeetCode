@@ -56,33 +56,36 @@ namespace BeetCode.Problems
 		public override object ExecuteSolution(object[] inputs)
 		{
 			int n = (int)inputs[0];
-			return FizzBuzz(n);
+			return new Solution().FizzBuzz(n);
 		}
 
-		// YOUR SOLUTION GOES HERE
-		public string[] FizzBuzz(int n)
+		public class Solution
 		{
-			string[] strings = new string[n];
-
-			for (int i = 1; i < n + 1; i++)
+			// YOUR SOLUTION GOES HERE
+			public string[] FizzBuzz(int n)
 			{
-				string s = "";
-				if (i % 3 == 0)
-					s = "Fizz";
-				if (i % 5 == 0)
-					s = s + "Buzz";
+				string[] strings = new string[n];
 
-				if(s.Length == 0)
+				for (int i = 1; i < n + 1; i++)
 				{
-					strings[i-1] = i.ToString();
+					string s = "";
+					if (i % 3 == 0)
+						s = "Fizz";
+					if (i % 5 == 0)
+						s = s + "Buzz";
+
+					if(s.Length == 0)
+					{
+						strings[i-1] = i.ToString();
+					}
+					else
+					{
+						strings[i-1] = s;
+					}
 				}
-				else
-				{
-					strings[i-1] = s;
-				}
+
+				return strings;
 			}
-
-			return strings;
 		}
 	}
 }

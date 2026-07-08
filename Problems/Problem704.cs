@@ -82,30 +82,33 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return Search((int[])inputs[0], (int)inputs[1]);
+            return new Solution().Search((int[])inputs[0], (int)inputs[1]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public int Search(int[] nums, int target)
+        public class Solution
         {
-            int l = 0;
-            int r = nums.Length - 1;
-
-            while(l <= r)
+            // YOUR SOLUTION GOES HERE
+            public int Search(int[] nums, int target)
             {
-                int m = l + ((r - l) / 2);
-                if(nums[m] == target) return m;
+                int l = 0;
+                int r = nums.Length - 1;
 
-                if(nums[m] < target)
+                while(l <= r)
                 {
-                    l = m + 1;
+                    int m = l + ((r - l) / 2);
+                    if(nums[m] == target) return m;
+
+                    if(nums[m] < target)
+                    {
+                        l = m + 1;
+                    }
+                    else
+                    {
+                        r = m - 1;
+                    }
                 }
-                else
-                {
-                    r = m - 1;
-                }
+                return -1;
             }
-            return -1;
         }
     }
 }

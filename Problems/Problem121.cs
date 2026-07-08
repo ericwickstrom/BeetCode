@@ -73,28 +73,31 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return MaxProfit((int[])inputs[0]);
+            return new Solution().MaxProfit((int[])inputs[0]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public int MaxProfit(int[] prices)
+        public class Solution
         {
-            if(prices == null || prices.Length <= 1) return 0;
-            
-            int low = int.MaxValue;
-            int profit = 0;
-
-            for(int i = 0; i < prices.Length; i++)
+            // YOUR SOLUTION GOES HERE
+            public int MaxProfit(int[] prices)
             {
-                if(prices[i]  < low)
-                    low = prices[i];
+                if(prices == null || prices.Length <= 1) return 0;
 
-                int newProfit = prices[i] - low;
-                if(newProfit > profit)
-                    profit = newProfit;
+                int low = int.MaxValue;
+                int profit = 0;
+
+                for(int i = 0; i < prices.Length; i++)
+                {
+                    if(prices[i]  < low)
+                        low = prices[i];
+
+                    int newProfit = prices[i] - low;
+                    if(newProfit > profit)
+                        profit = newProfit;
+                }
+
+                return profit;
             }
-
-            return profit;
         }
     }
 }

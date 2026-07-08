@@ -49,32 +49,40 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            var result = ReverseList((ListNode)inputs[0]);
+            var result = new Solution().ReverseList((ListNode)inputs[0]);
             return LinkedListToArray(result);
         }
 
-        /*
-            head.next -> n.next
-            temp = head
-
-        */
-
-        // YOUR SOLUTION GOES HERE
-        public ListNode ReverseList(ListNode head)
+        /**
+         * Definition for singly-linked list.
+         * public class ListNode {
+         *     public int val;
+         *     public ListNode next;
+         *     public ListNode(int val=0, ListNode next=null) {
+         *         this.val = val;
+         *         this.next = next;
+         *     }
+         * }
+         */
+        public class Solution
         {
-            if(head == null) return null;
-            
-            ListNode previous = null;
-            ListNode current = head;
-
-            while(current != null)
+            // YOUR SOLUTION GOES HERE
+            public ListNode ReverseList(ListNode head)
             {
-                ListNode next = current.next;
-                current.next = previous;
-                previous = current;
-                current = next;
+                if(head == null) return null;
+
+                ListNode previous = null;
+                ListNode current = head;
+
+                while(current != null)
+                {
+                    ListNode next = current.next;
+                    current.next = previous;
+                    previous = current;
+                    current = next;
+                }
+                return previous;
             }
-            return previous;
         }
     }
 }

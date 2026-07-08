@@ -103,7 +103,7 @@ namespace BeetCode.Problems
 			int[] nums = (int[])inputs[1];
 			int[] addValues = (int[])inputs[2];
 
-			var obj = new KthLargest(k, nums);
+			var obj = new Solution.KthLargest(k, nums);
 			var results = new int[addValues.Length];
 			for (int i = 0; i < addValues.Length; i++)
 			{
@@ -112,31 +112,34 @@ namespace BeetCode.Problems
 			return results;
 		}
 
-		// YOUR SOLUTION GOES HERE
-		public class KthLargest
+		public class Solution
 		{
-			private readonly PriorityQueue<int,int> _pq;
-			private readonly int _size;
-
-			public KthLargest(int k, int[] nums)
+			// YOUR SOLUTION GOES HERE
+			public class KthLargest
 			{
-				_size = k;
-				_pq = new PriorityQueue<int, int>();
+				private readonly PriorityQueue<int,int> _pq;
+				private readonly int _size;
 
-				foreach(int num in nums)
+				public KthLargest(int k, int[] nums)
 				{
-					Add(num);
-				}
-			}
+					_size = k;
+					_pq = new PriorityQueue<int, int>();
 
-			public int Add(int val)
-			{
-			    _pq.Enqueue(val, val);
-				if(_pq.Count > _size)
-				{
-					_pq.Dequeue();
+					foreach(int num in nums)
+					{
+						Add(num);
+					}
 				}
-				return _pq.Peek();
+
+				public int Add(int val)
+				{
+				    _pq.Enqueue(val, val);
+					if(_pq.Count > _size)
+					{
+						_pq.Dequeue();
+					}
+					return _pq.Peek();
+				}
 			}
 		}
 	}

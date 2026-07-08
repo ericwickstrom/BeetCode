@@ -69,17 +69,33 @@ namespace BeetCode.Problems
 
 		public override object ExecuteSolution(object[] inputs)
 		{
-			return IsSameTree((TreeNode?)inputs[0], (TreeNode?)inputs[1]);
+			return new Solution().IsSameTree((TreeNode?)inputs[0], (TreeNode?)inputs[1]);
 		}
 
-		// YOUR SOLUTION GOES HERE
-		public bool IsSameTree(TreeNode? p, TreeNode? q)
+		/**
+		 * Definition for a binary tree node.
+		 * public class TreeNode {
+		 *     public int val;
+		 *     public TreeNode left;
+		 *     public TreeNode right;
+		 *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+		 *         this.val = val;
+		 *         this.left = left;
+		 *         this.right = right;
+		 *     }
+		 * }
+		 */
+		public class Solution
 		{
-			if(p == null && q == null) return true;
-			if((p == null && q != null) || (p != null && q == null))  return false;
-			if(p.val != q.val) return false;
+			// YOUR SOLUTION GOES HERE
+			public bool IsSameTree(TreeNode? p, TreeNode? q)
+			{
+				if(p == null && q == null) return true;
+				if((p == null && q != null) || (p != null && q == null))  return false;
+				if(p.val != q.val) return false;
 
-			return IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
+				return IsSameTree(p.left, q.left) && IsSameTree(p.right, q.right);
+			}
 		}
 	}
 }

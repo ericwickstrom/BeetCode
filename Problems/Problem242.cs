@@ -70,27 +70,30 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return IsAnagram((string)inputs[0], (string)inputs[1]);
+            return new Solution().IsAnagram((string)inputs[0], (string)inputs[1]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public bool IsAnagram(string s, string t)
+        public class Solution
         {
-            if(s.Length != t.Length) return false;
-            int[] letters = new int[26];
-
-            for(int i = 0; i < s.Length; i++)
+            // YOUR SOLUTION GOES HERE
+            public bool IsAnagram(string s, string t)
             {
-                letters[s[i] - 'a']++;
-                letters[t[i] - 'a']--;
-            }
+                if(s.Length != t.Length) return false;
+                int[] letters = new int[26];
 
-            foreach(int l in letters)
-            {
-                if(l != 0) return false;
+                for(int i = 0; i < s.Length; i++)
+                {
+                    letters[s[i] - 'a']++;
+                    letters[t[i] - 'a']--;
+                }
+
+                foreach(int l in letters)
+                {
+                    if(l != 0) return false;
+                }
+
+                return true;
             }
-            
-            return true;
         }
     }
 }

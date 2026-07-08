@@ -90,35 +90,38 @@ namespace BeetCode.Problems
         {
             var list1 = (ListNode?)inputs[0];
             var list2 = (ListNode?)inputs[1];
-            return MergeTwoLists(list1, list2);
+            return new Solution().MergeTwoLists(list1, list2);
         }
 
-        /// <summary>
-        /// YOUR SOLUTION GOES HERE!
-        /// Replace the NotImplementedException with your implementation.
-        ///
-        /// Approaches to consider:
-        /// 1. Iterative with dummy node
-        /// 2. Recursive approach
-        /// 3. In-place merging
-        ///
-        /// Time Complexity: O(m + n) where m and n are the lengths of the lists
-        /// Space Complexity: O(1) for iterative, O(m + n) for recursive (call stack)
-        /// </summary>
-        public ListNode? MergeTwoLists(ListNode? list1, ListNode? list2)
+        /**
+         * Definition for singly-linked list.
+         * public class ListNode {
+         *     public int val;
+         *     public ListNode next;
+         *     public ListNode(int val=0, ListNode next=null) {
+         *         this.val = val;
+         *         this.next = next;
+         *     }
+         * }
+         */
+        public class Solution
         {
-            if (list1 == null) return list2;
-            if (list2 == null) return list1;
+            // YOUR SOLUTION GOES HERE
+            public ListNode? MergeTwoLists(ListNode? list1, ListNode? list2)
+            {
+                if (list1 == null) return list2;
+                if (list2 == null) return list1;
 
-            if (list1.val < list2.val)
-            {
-                list1.next = MergeTwoLists(list1.next, list2);
-                return list1;
-            }
-            else
-            {
-                list2.next = MergeTwoLists(list1, list2.next);
-                return list2;
+                if (list1.val < list2.val)
+                {
+                    list1.next = MergeTwoLists(list1.next, list2);
+                    return list1;
+                }
+                else
+                {
+                    list2.next = MergeTwoLists(list1, list2.next);
+                    return list2;
+                }
             }
         }
     }

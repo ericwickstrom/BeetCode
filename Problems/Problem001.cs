@@ -53,24 +53,27 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return TwoSum((int[])inputs[0], (int)inputs[1]);
+            return new Solution().TwoSum((int[])inputs[0], (int)inputs[1]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public int[] TwoSum(int[] nums, int target)
+        public class Solution
         {
-            Dictionary<int,int> dict = new Dictionary<int, int>();
-            for(int i = 0; i < nums.Length; i++)
+            // YOUR SOLUTION GOES HERE
+            public int[] TwoSum(int[] nums, int target)
             {
-                int num = target - nums[i];
-                if (dict.TryGetValue(num, out int idx))
+                Dictionary<int,int> dict = new Dictionary<int, int>();
+                for(int i = 0; i < nums.Length; i++)
                 {
-                    return new int[] { idx, i};
+                    int num = target - nums[i];
+                    if (dict.TryGetValue(num, out int idx))
+                    {
+                        return new int[] { idx, i};
+                    }
+
+                    dict[nums[i]] = i;
                 }
-                
-                dict[nums[i]] = i;
+                return new int[]{};
             }
-            return new int[]{};
         }
     }
 }

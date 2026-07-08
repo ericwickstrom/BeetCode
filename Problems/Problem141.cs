@@ -71,7 +71,7 @@ namespace BeetCode.Problems
 			int[] values = (int[])inputs[0];
 			int pos = (int)inputs[1];
 			ListNode? head = CreateLinkedListWithCycle(values, pos);
-			return HasCycle(head);
+			return new Solution().HasCycle(head);
 		}
 
 		private ListNode? CreateLinkedListWithCycle(int[] values, int pos)
@@ -96,22 +96,36 @@ namespace BeetCode.Problems
 			return head;
 		}
 
-		// YOUR SOLUTION GOES HERE
-		public bool HasCycle(ListNode? head)
+		/**
+		 * Definition for singly-linked list.
+		 * public class ListNode {
+		 *     public int val;
+		 *     public ListNode next;
+		 *     public ListNode(int val=0, ListNode next=null) {
+		 *         this.val = val;
+		 *         this.next = next;
+		 *     }
+		 * }
+		 */
+		public class Solution
 		{
-		    if(head == null || head.next == null) return false;
-
-			ListNode slow = head;
-			ListNode fast = head.next;
-
-			while(fast != null && fast.next != null)
+			// YOUR SOLUTION GOES HERE
+			public bool HasCycle(ListNode? head)
 			{
-				if(slow == fast) return true;
-				slow = slow.next;
-				fast = fast.next.next;
-			}
+			    if(head == null || head.next == null) return false;
 
-			return false;
+				ListNode slow = head;
+				ListNode fast = head.next;
+
+				while(fast != null && fast.next != null)
+				{
+					if(slow == fast) return true;
+					slow = slow.next;
+					fast = fast.next.next;
+				}
+
+				return false;
+			}
 		}
 	}
 }

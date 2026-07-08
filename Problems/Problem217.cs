@@ -57,19 +57,22 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return ContainsDuplicate((int[])inputs[0]);
+            return new Solution().ContainsDuplicate((int[])inputs[0]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public bool ContainsDuplicate(int[] nums)
+        public class Solution
         {
-            HashSet<int> set = new HashSet<int>();
-            foreach(int num in nums)
+            // YOUR SOLUTION GOES HERE
+            public bool ContainsDuplicate(int[] nums)
             {
-                if(set.Contains(num)) return true;
-                set.Add(num);
+                HashSet<int> set = new HashSet<int>();
+                foreach(int num in nums)
+                {
+                    if(set.Contains(num)) return true;
+                    set.Add(num);
+                }
+                return false;
             }
-            return false;
         }
     }
 }
