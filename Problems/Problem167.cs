@@ -61,14 +61,17 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return TwoSum((int[])inputs[0], (int)inputs[1]);
+            return new Solution().TwoSum((int[])inputs[0], (int)inputs[1]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public int[] TwoSum(int[] numbers, int target)
+        public class Solution
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            // YOUR SOLUTION GOES HERE
+            public int[] TwoSum(int[] numbers, int target)
+            {
+                // TODO: Implement your solution
+                throw new NotImplementedException();
+            }
         }
     }
 }

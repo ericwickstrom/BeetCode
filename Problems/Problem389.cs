@@ -69,14 +69,17 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return FindTheDifference((string)inputs[0], (string)inputs[1]);
+            return new Solution().FindTheDifference((string)inputs[0], (string)inputs[1]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public char FindTheDifference(string s, string t)
+        public class Solution
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            // YOUR SOLUTION GOES HERE
+            public char FindTheDifference(string s, string t)
+            {
+                // TODO: Implement your solution
+                throw new NotImplementedException();
+            }
         }
     }
 }

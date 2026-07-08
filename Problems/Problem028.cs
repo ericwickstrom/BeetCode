@@ -60,14 +60,17 @@ namespace BeetCode.Problems
 		{
 			string haystack = (string)inputs[0];
 			string needle = (string)inputs[1];
-			return StrStr(haystack, needle);
+			return new Solution().StrStr(haystack, needle);
 		}
 
-		// YOUR SOLUTION GOES HERE
-		public int StrStr(string haystack, string needle)
+		public class Solution
 		{
-		    // TODO: Implement your solution
-		    throw new NotImplementedException();
+			// YOUR SOLUTION GOES HERE
+			public int StrStr(string haystack, string needle)
+			{
+			    // TODO: Implement your solution
+			    throw new NotImplementedException();
+			}
 		}
 	}
 }

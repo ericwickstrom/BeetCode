@@ -58,15 +58,18 @@ namespace BeetCode.Problems
 		public override object ExecuteSolution(object[] inputs)
 		{
 			int[] nums = (int[])inputs[0];
-			int k = RemoveDuplicates(nums);
+			int k = new Solution().RemoveDuplicates(nums);
 			return nums[..k];
 		}
 
-		// YOUR SOLUTION GOES HERE
-		public int RemoveDuplicates(int[] nums)
+		public class Solution
 		{
-		    // TODO: Implement your solution
-		    throw new NotImplementedException();
+			// YOUR SOLUTION GOES HERE
+			public int RemoveDuplicates(int[] nums)
+			{
+			    // TODO: Implement your solution
+			    throw new NotImplementedException();
+			}
 		}
 	}
 }

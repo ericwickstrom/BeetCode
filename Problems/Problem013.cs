@@ -97,14 +97,17 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return RomanToInt((string)inputs[0]);
+            return new Solution().RomanToInt((string)inputs[0]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public int RomanToInt(string s)
+        public class Solution
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            // YOUR SOLUTION GOES HERE
+            public int RomanToInt(string s)
+            {
+                // TODO: Implement your solution
+                throw new NotImplementedException();
+            }
         }
     }
 }

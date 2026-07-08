@@ -64,14 +64,17 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return IsPalindrome((int)inputs[0]);
+            return new Solution().IsPalindrome((int)inputs[0]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public bool IsPalindrome(int x)
+        public class Solution
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            // YOUR SOLUTION GOES HERE
+            public bool IsPalindrome(int x)
+            {
+                // TODO: Implement your solution
+                throw new NotImplementedException();
+            }
         }
     }
 }

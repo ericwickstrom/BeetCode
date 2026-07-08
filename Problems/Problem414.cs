@@ -71,14 +71,17 @@ namespace BeetCode.Problems
 		public override object ExecuteSolution(object[] inputs)
 		{
 			int[] nums = (int[])inputs[0];
-			return ThirdMax(nums);
+			return new Solution().ThirdMax(nums);
 		}
 
-		// YOUR SOLUTION GOES HERE
-		public int ThirdMax(int[] nums)
+		public class Solution
 		{
-		    // TODO: Implement your solution
-		    throw new NotImplementedException();
+			// YOUR SOLUTION GOES HERE
+			public int ThirdMax(int[] nums)
+			{
+			    // TODO: Implement your solution
+			    throw new NotImplementedException();
+			}
 		}
 	}
 }

@@ -65,14 +65,17 @@ namespace BeetCode.Problems
 		public override object ExecuteSolution(object[] inputs)
 		{
 			string s = (string)inputs[0];
-			return LengthOfLastWord(s);
+			return new Solution().LengthOfLastWord(s);
 		}
 
-		// YOUR SOLUTION GOES HERE
-		public int LengthOfLastWord(string s)
+		public class Solution
 		{
-		    // TODO: Implement your solution
-		    throw new NotImplementedException();
+			// YOUR SOLUTION GOES HERE
+			public int LengthOfLastWord(string s)
+			{
+			    // TODO: Implement your solution
+			    throw new NotImplementedException();
+			}
 		}
 	}
 }

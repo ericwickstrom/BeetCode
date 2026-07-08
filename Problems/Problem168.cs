@@ -68,14 +68,17 @@ namespace BeetCode.Problems
 		public override object ExecuteSolution(object[] inputs)
 		{
 			int columnNumber = (int)inputs[0];
-			return ConvertToTitle(columnNumber);
+			return new Solution().ConvertToTitle(columnNumber);
 		}
 
-		// YOUR SOLUTION GOES HERE
-		public string ConvertToTitle(int columnNumber)
+		public class Solution
 		{
-		    // TODO: Implement your solution
-		    throw new NotImplementedException();
+			// YOUR SOLUTION GOES HERE
+			public string ConvertToTitle(int columnNumber)
+			{
+			    // TODO: Implement your solution
+			    throw new NotImplementedException();
+			}
 		}
 	}
 }

@@ -72,14 +72,17 @@ namespace BeetCode.Problems
 		public override object ExecuteSolution(object[] inputs)
 		{
 			int[] digits = (int[])inputs[0];
-			return PlusOne(digits);
+			return new Solution().PlusOne(digits);
 		}
 
-		// YOUR SOLUTION GOES HERE
-		public int[] PlusOne(int[] digits)
+		public class Solution
 		{
-		    // TODO: Implement your solution
-		    throw new NotImplementedException();
+			// YOUR SOLUTION GOES HERE
+			public int[] PlusOne(int[] digits)
+			{
+			    // TODO: Implement your solution
+			    throw new NotImplementedException();
+			}
 		}
 	}
 }

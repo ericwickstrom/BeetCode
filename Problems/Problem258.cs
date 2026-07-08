@@ -64,14 +64,17 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return AddDigits((int)inputs[0]);
+            return new Solution().AddDigits((int)inputs[0]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public int AddDigits(int num)
+        public class Solution
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            // YOUR SOLUTION GOES HERE
+            public int AddDigits(int num)
+            {
+                // TODO: Implement your solution
+                throw new NotImplementedException();
+            }
         }
     }
 }

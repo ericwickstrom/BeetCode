@@ -57,14 +57,17 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return SingleNumber((int[])inputs[0]);
+            return new Solution().SingleNumber((int[])inputs[0]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public int SingleNumber(int[] nums)
+        public class Solution
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            // YOUR SOLUTION GOES HERE
+            public int SingleNumber(int[] nums)
+            {
+                // TODO: Implement your solution
+                throw new NotImplementedException();
+            }
         }
     }
 }

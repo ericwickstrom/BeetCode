@@ -76,14 +76,17 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return CanConstruct((string)inputs[0], (string)inputs[1]);
+            return new Solution().CanConstruct((string)inputs[0], (string)inputs[1]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public bool CanConstruct(string ransomNote, string magazine)
+        public class Solution
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            // YOUR SOLUTION GOES HERE
+            public bool CanConstruct(string ransomNote, string magazine)
+            {
+                // TODO: Implement your solution
+                throw new NotImplementedException();
+            }
         }
     }
 }

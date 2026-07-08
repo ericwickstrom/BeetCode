@@ -83,14 +83,17 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return LongestCommonPrefix((string[])inputs[0]);
+            return new Solution().LongestCommonPrefix((string[])inputs[0]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public string LongestCommonPrefix(string[] strs)
+        public class Solution
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            // YOUR SOLUTION GOES HERE
+            public string LongestCommonPrefix(string[] strs)
+            {
+                // TODO: Implement your solution
+                throw new NotImplementedException();
+            }
         }
     }
 }

@@ -69,14 +69,17 @@ namespace BeetCode.Problems
 
         public override object ExecuteSolution(object[] inputs)
         {
-            return IsHappy((int)inputs[0]);
+            return new Solution().IsHappy((int)inputs[0]);
         }
 
-        // YOUR SOLUTION GOES HERE
-        public bool IsHappy(int n)
+        public class Solution
         {
-            // TODO: Implement your solution
-            throw new NotImplementedException();
+            // YOUR SOLUTION GOES HERE
+            public bool IsHappy(int n)
+            {
+                // TODO: Implement your solution
+                throw new NotImplementedException();
+            }
         }
     }
 }
