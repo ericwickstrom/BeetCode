@@ -180,23 +180,70 @@ namespace BeetCode.Framework
 			string callArgs = string.Join(", ", methodInfo.Params.Select(p => p.Name));
 			if (methodInfo.ReturnTypeLeetCode == "ListNode")
 			{
-				sb.AppendLine($"\t\t\tListNode result = {methodInfo.Name}({callArgs});");
+				sb.AppendLine($"\t\t\tListNode result = new Solution().{methodInfo.Name}({callArgs});");
 				sb.AppendLine($"\t\t\treturn LinkedListToArray(result);");
 			}
 			else
 			{
-				sb.AppendLine($"\t\t\treturn {methodInfo.Name}({callArgs});");
+				sb.AppendLine($"\t\t\treturn new Solution().{methodInfo.Name}({callArgs});");
 			}
 			sb.AppendLine("\t\t}");
 			sb.AppendLine();
 
 			// --- Solution stub ---
-			sb.AppendLine("\t\t// YOUR SOLUTION GOES HERE");
-			string paramList = string.Join(", ", methodInfo.Params.Select(p => $"{p.CSharpType} {p.Name}"));
-			sb.AppendLine($"\t\tpublic {methodInfo.ReturnTypeCSharp} {methodInfo.Name}({paramList})");
+			bool usesTreeNode = methodInfo.ReturnTypeLeetCode == "TreeNode" || methodInfo.Params.Any(p => p.LeetCodeType == "TreeNode");
+			bool usesListNode = methodInfo.ReturnTypeLeetCode == "ListNode" || methodInfo.Params.Any(p => p.LeetCodeType == "ListNode");
+			if (usesTreeNode)
+				sb.Append(BuildTypeDocComment("TreeNode"));
+			if (usesListNode)
+				sb.Append(BuildTypeDocComment("ListNode"));
+
+			sb.AppendLine("\t\tpublic class Solution");
 			sb.AppendLine("\t\t{");
-			sb.AppendLine("\t\t\tthrow new NotImplementedException();");
+			sb.AppendLine("\t\t\t// YOUR SOLUTION GOES HERE");
+			string paramList = string.Join(", ", methodInfo.Params.Select(p => $"{p.CSharpType} {p.Name}"));
+			sb.AppendLine($"\t\t\tpublic {methodInfo.ReturnTypeCSharp} {methodInfo.Name}({paramList})");
+			sb.AppendLine("\t\t\t{");
+			sb.AppendLine("\t\t\t\tthrow new NotImplementedException();");
+			sb.AppendLine("\t\t\t}");
 			sb.AppendLine("\t\t}");
+		}
+
+		private static string BuildTypeDocComment(string leetCodeType)
+		{
+			if (leetCodeType == "TreeNode")
+			{
+				return
+					"\t\t/**\n" +
+					"\t\t * Definition for a binary tree node.\n" +
+					"\t\t * public class TreeNode {\n" +
+					"\t\t *     public int val;\n" +
+					"\t\t *     public TreeNode left;\n" +
+					"\t\t *     public TreeNode right;\n" +
+					"\t\t *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {\n" +
+					"\t\t *         this.val = val;\n" +
+					"\t\t *         this.left = left;\n" +
+					"\t\t *         this.right = right;\n" +
+					"\t\t *     }\n" +
+					"\t\t * }\n" +
+					"\t\t */\n";
+			}
+			if (leetCodeType == "ListNode")
+			{
+				return
+					"\t\t/**\n" +
+					"\t\t * Definition for singly-linked list.\n" +
+					"\t\t * public class ListNode {\n" +
+					"\t\t *     public int val;\n" +
+					"\t\t *     public ListNode next;\n" +
+					"\t\t *     public ListNode(int val=0, ListNode next=null) {\n" +
+					"\t\t *         this.val = val;\n" +
+					"\t\t *         this.next = next;\n" +
+					"\t\t *     }\n" +
+					"\t\t * }\n" +
+					"\t\t */\n";
+			}
+			return "";
 		}
 
 		// -----------------------------------------------------------------
@@ -317,7 +364,7 @@ namespace BeetCode.Framework
 
 			// Create instance
 			string ctorArgs = string.Join(", ", classInfo.ConstructorParams.Select(p => p.Name));
-			sb.AppendLine($"\t\t\tvar obj = new {classInfo.ClassName}({ctorArgs});");
+			sb.AppendLine($"\t\t\tvar obj = new Solution.{classInfo.ClassName}({ctorArgs});");
 
 			// Loop method calls
 			sb.AppendLine($"\t\t\tvar results = new {method.ReturnTypeCSharp}[{method.NameCamelCase}Values.Length];");
@@ -438,7 +485,7 @@ namespace BeetCode.Framework
 
 			// Create instance
 			string ctorArgs = string.Join(", ", classInfo.ConstructorParams.Select(p => p.Name));
-			sb.AppendLine($"\t\t\tvar obj = new {classInfo.ClassName}({ctorArgs});");
+			sb.AppendLine($"\t\t\tvar obj = new Solution.{classInfo.ClassName}({ctorArgs});");
 			sb.AppendLine("\t\t\tvar results = new object[methods.Length];");
 			sb.AppendLine();
 			sb.AppendLine("\t\t\tfor (int i = 0; i < methods.Length; i++)");
@@ -475,26 +522,29 @@ namespace BeetCode.Framework
 
 		private static void BuildClassStub(StringBuilder sb, ClassInfo classInfo)
 		{
-			sb.AppendLine("\t\t// YOUR SOLUTION GOES HERE");
-			string ctorParams = string.Join(", ", classInfo.ConstructorParams.Select(p => $"{p.CSharpType} {p.Name}"));
-			sb.AppendLine($"\t\tpublic class {classInfo.ClassName}");
+			sb.AppendLine("\t\tpublic class Solution");
 			sb.AppendLine("\t\t{");
-			sb.AppendLine($"\t\t\tpublic {classInfo.ClassName}({ctorParams})");
+			sb.AppendLine("\t\t\t// YOUR SOLUTION GOES HERE");
+			string ctorParams = string.Join(", ", classInfo.ConstructorParams.Select(p => $"{p.CSharpType} {p.Name}"));
+			sb.AppendLine($"\t\t\tpublic class {classInfo.ClassName}");
 			sb.AppendLine("\t\t\t{");
-			sb.AppendLine("\t\t\t\tthrow new NotImplementedException();");
-			sb.AppendLine("\t\t\t}");
+			sb.AppendLine($"\t\t\t\tpublic {classInfo.ClassName}({ctorParams})");
+			sb.AppendLine("\t\t\t\t{");
+			sb.AppendLine("\t\t\t\t\tthrow new NotImplementedException();");
+			sb.AppendLine("\t\t\t\t}");
 
 			foreach (var method in classInfo.Methods)
 			{
 				sb.AppendLine();
 				string methodParams = string.Join(", ", method.Params.Select(p => $"{p.CSharpType} {p.Name}"));
 				string returnType = method.IsVoid ? "void" : method.ReturnTypeCSharp;
-				sb.AppendLine($"\t\t\tpublic {returnType} {method.NamePascalCase}({methodParams})");
-				sb.AppendLine("\t\t\t{");
-				sb.AppendLine("\t\t\t\tthrow new NotImplementedException();");
-				sb.AppendLine("\t\t\t}");
+				sb.AppendLine($"\t\t\t\tpublic {returnType} {method.NamePascalCase}({methodParams})");
+				sb.AppendLine("\t\t\t\t{");
+				sb.AppendLine("\t\t\t\t\tthrow new NotImplementedException();");
+				sb.AppendLine("\t\t\t\t}");
 			}
 
+			sb.AppendLine("\t\t\t}");
 			sb.AppendLine("\t\t}");
 		}
 
@@ -527,8 +577,11 @@ namespace BeetCode.Framework
 			sb.AppendLine("\t\t\tthrow new NotImplementedException();");
 			sb.AppendLine("\t\t}");
 			sb.AppendLine();
-			sb.AppendLine("\t\t// YOUR SOLUTION GOES HERE");
-			sb.AppendLine("\t\t// TODO: Add your solution class");
+			sb.AppendLine("\t\tpublic class Solution");
+			sb.AppendLine("\t\t{");
+			sb.AppendLine("\t\t\t// YOUR SOLUTION GOES HERE");
+			sb.AppendLine("\t\t\t// TODO: Add your solution class");
+			sb.AppendLine("\t\t}");
 		}
 
 		// -----------------------------------------------------------------
@@ -565,8 +618,11 @@ namespace BeetCode.Framework
 			sb.AppendLine("\t\t\tthrow new NotImplementedException();");
 			sb.AppendLine("\t\t}");
 			sb.AppendLine();
-			sb.AppendLine("\t\t// YOUR SOLUTION GOES HERE");
-			sb.AppendLine("\t\t// TODO: Add your solution method");
+			sb.AppendLine("\t\tpublic class Solution");
+			sb.AppendLine("\t\t{");
+			sb.AppendLine("\t\t\t// YOUR SOLUTION GOES HERE");
+			sb.AppendLine("\t\t\t// TODO: Add your solution method");
+			sb.AppendLine("\t\t}");
 		}
 
 		// -----------------------------------------------------------------
