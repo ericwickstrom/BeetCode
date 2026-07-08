@@ -77,10 +77,24 @@ namespace BeetCode.Problems
 		 */
 		public class Solution
 		{
+			private int _maxDiameter = 0;
 			// YOUR SOLUTION GOES HERE
 			public int DiameterOfBinaryTree(TreeNode? root)
 			{
-				throw new NotImplementedException();
+				Depth(root);
+				return _maxDiameter;
+			}
+
+			private int Depth(TreeNode? node)
+			{
+				if(node == null) return 0;
+				int l = Depth(node.left);
+				int r = Depth(node.right);
+				
+				int diameter = l + r;
+				_maxDiameter = diameter > _maxDiameter ? diameter : _maxDiameter;
+
+				return 1 + Math.Max(l, r);
 			}
 		}
 	}
