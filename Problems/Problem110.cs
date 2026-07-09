@@ -80,7 +80,19 @@ namespace BeetCode.Problems
 			// YOUR SOLUTION GOES HERE
 			public bool IsBalanced(TreeNode? root)
 			{
-				throw new NotImplementedException();
+				return InvestigateTree(root) != -1;
+			}
+
+			public int InvestigateTree(TreeNode? root)
+			{
+				if(root == null) return 0;
+				int l = InvestigateTree(root.left);
+				int r = InvestigateTree(root.right);
+
+				if(l == -1 || r == -1) return -1;
+				if(Math.Abs(l - r) > 1) return -1;
+
+				return 1 + Math.Max(l,r);
 			}
 		}
 	}
