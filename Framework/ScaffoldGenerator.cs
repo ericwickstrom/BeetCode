@@ -23,6 +23,7 @@ namespace BeetCode.Framework
 			{ "long", "long" },
 			{ "ListNode", "ListNode" },
 			{ "TreeNode", "TreeNode" },
+			{ "integer?[]", "int?[]" },
 		};
 
 		private class MethodInfo
@@ -125,19 +126,29 @@ namespace BeetCode.Framework
 				{
 					// For ListNode params, store as int[] in test case
 					string effectiveType = methodInfo.Params[p].LeetCodeType;
+					bool isTree = effectiveType == "TreeNode";
 					if (effectiveType == "ListNode")
 						effectiveType = "integer[]";
+					else if (isTree)
+						effectiveType = "integer?[]";
 
 					string converted = TryConvertValue(inputValues[p].Trim(), effectiveType);
 					if (converted == null) { inputsFailed = true; break; }
+					if (isTree)
+						converted = $"CreateTree({converted})";
 					inputParts.Add(converted);
 				}
 
 				// Convert expected output to C# literal
 				string returnType = methodInfo.ReturnTypeLeetCode;
+				bool returnIsTree = returnType == "TreeNode";
 				if (returnType == "ListNode")
 					returnType = "integer[]";
+				else if (returnIsTree)
+					returnType = "integer?[]";
 				string expectedConverted = TryConvertValue(expectedOutput, returnType);
+				if (returnIsTree && expectedConverted != null)
+					expectedConverted = $"CreateTree({expectedConverted})";
 
 				if (inputsFailed || expectedConverted == null)
 				{
@@ -173,6 +184,8 @@ namespace BeetCode.Framework
 				var param = methodInfo.Params[i];
 				if (param.LeetCodeType == "ListNode")
 					sb.AppendLine($"\t\t\tListNode {param.Name} = CreateLinkedList((int[])inputs[{i}]);");
+				else if (param.LeetCodeType == "TreeNode")
+					sb.AppendLine($"\t\t\tTreeNode? {param.Name} = (TreeNode?)inputs[{i}];");
 				else
 					sb.AppendLine($"\t\t\t{param.CSharpType} {param.Name} = ({param.CSharpType})inputs[{i}];");
 			}
@@ -201,8 +214,10 @@ namespace BeetCode.Framework
 			sb.AppendLine("\t\tpublic class Solution");
 			sb.AppendLine("\t\t{");
 			sb.AppendLine("\t\t\t// YOUR SOLUTION GOES HERE");
-			string paramList = string.Join(", ", methodInfo.Params.Select(p => $"{p.CSharpType} {p.Name}"));
-			sb.AppendLine($"\t\t\tpublic {methodInfo.ReturnTypeCSharp} {methodInfo.Name}({paramList})");
+			string paramList = string.Join(", ", methodInfo.Params.Select(p =>
+				$"{(p.LeetCodeType == "TreeNode" ? "TreeNode?" : p.CSharpType)} {p.Name}"));
+			string solutionReturnType = methodInfo.ReturnTypeLeetCode == "TreeNode" ? "TreeNode?" : methodInfo.ReturnTypeCSharp;
+			sb.AppendLine($"\t\t\tpublic {solutionReturnType} {methodInfo.Name}({paramList})");
 			sb.AppendLine("\t\t\t{");
 			sb.AppendLine("\t\t\t\tthrow new NotImplementedException();");
 			sb.AppendLine("\t\t\t}");
