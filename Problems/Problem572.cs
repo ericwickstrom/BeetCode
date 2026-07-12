@@ -53,6 +53,10 @@ namespace BeetCode.Problems
 					new object[] { CreateTree(new int?[] { 1 }), CreateTree(new int?[] { 1 }) },
 					true),
 
+				new TestCase("Duplicate values, subRoot is single node",
+					new object[] { CreateTree(new int?[] { 1, 1 }), CreateTree(new int?[] { 1 }) },
+					true),
+
 				new TestCase("subRoot larger than root",
 					new object[] { CreateTree(new int?[] { 1 }), CreateTree(new int?[] { 1, 2 }) },
 					false),
@@ -85,10 +89,25 @@ namespace BeetCode.Problems
 		 */
 		public class Solution
 		{
-			// YOUR SOLUTION GOES HERE
 			public bool IsSubtree(TreeNode? root, TreeNode? subRoot)
 			{
-				throw new NotImplementedException();
+				if(root == null && subRoot == null) return true;
+				if((root == null && subRoot != null) || (root != null && subRoot == null)) return false;
+
+				if(IsSameTree(root, subRoot)) return true;
+				if(IsSubtree(root.left, subRoot)) return true;
+				if(IsSubtree(root.right, subRoot)) return true;
+
+				return false;
+			}
+
+			private bool IsSameTree(TreeNode? root, TreeNode? subRoot)
+			{
+				if(root == null && subRoot == null) return true;
+				if((root == null && subRoot != null) || (root != null && subRoot == null)) return false;
+
+				if(root?.val != subRoot?.val) return false;
+				return IsSameTree(root?.left, subRoot?.left) && IsSameTree(root?.right, subRoot?.right);
 			}
 		}
 	}

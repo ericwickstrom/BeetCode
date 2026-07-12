@@ -147,15 +147,15 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 18**
+**Total Solved: 19**
 
 | Set | Progress |
 |-----|----------|
-| 🅱️ Blind 150 | 17 / 148 |
+| 🅱️ Blind 150 | 18 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 18 / 42)
+## 🟢 Easy (42 problems — 19 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -215,7 +215,7 @@ MIT License - Practice away! 🚀
 
 ✅ 100 · Same Tree 🅱️
 
-🔲 572 · Subtree of Another Tree 🅱️
+✅ 572 · Subtree of Another Tree 🅱️
 
 ### Heap / Priority Queue
 ✅ 703 · Kth Largest Element in a Stream 🅱️
