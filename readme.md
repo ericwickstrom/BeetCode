@@ -147,15 +147,15 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 20**
+**Total Solved: 21**
 
 | Set | Progress |
 |-----|----------|
-| 🅱️ Blind 150 | 19 / 148 |
+| 🅱️ Blind 150 | 20 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 20 / 42)
+## 🟢 Easy (42 problems — 21 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -225,7 +225,7 @@ MIT License - Practice away! 🚀
 ### 1-D Dynamic Programming
 ✅ 70 · Climbing Stairs 🅱️
 
-🔲 746 · Min Cost Climbing Stairs 🅱️
+✅ 746 · Min Cost Climbing Stairs 🅱️
 
 ### Intervals
 🔲 252 · Meeting Rooms *(Premium)* 🅱️
