@@ -14,6 +14,7 @@ namespace BeetCode.Framework
 		{
 			// Discover solved problems
 			var solvedNumbers = GetSolvedProblemNumbers();
+			var difficultyByNumber = GetDifficultyByNumber();
 
 			// Load problem sets
 			var problemSets = LoadProblemSets();
@@ -100,7 +101,7 @@ namespace BeetCode.Framework
 			}
 
 			// Update summary section
-			UpdateSummarySection(lines, solvedNumbers, problemSets);
+			UpdateSummarySection(lines, solvedNumbers, problemSets, difficultyByNumber);
 
 			// Ensure a blank line between consecutive problem entries so markdown renders each on its own line
 			for (int i = lines.Count - 2; i >= 0; i--)
@@ -128,7 +129,7 @@ namespace BeetCode.Framework
 			}
 		}
 
-		private static void UpdateSummarySection(List<string> lines, HashSet<int> solvedNumbers, List<ProblemSet> problemSets)
+		private static void UpdateSummarySection(List<string> lines, HashSet<int> solvedNumbers, List<ProblemSet> problemSets, Dictionary<int, string> difficultyByNumber)
 		{
 			// Find the summary line (either old format or new format)
 			var oldSummaryPattern = new Regex(@"^\*\*Completed: \d+ / \d+\*\*$");
@@ -165,12 +166,36 @@ namespace BeetCode.Framework
 			if (problemSets.Count > 0)
 			{
 				summaryBlock.Add("");
-				summaryBlock.Add("| Set | Progress |");
-				summaryBlock.Add("|-----|----------|");
+				summaryBlock.Add("| Set | Easy | Medium | Hard | Total |");
+				summaryBlock.Add("|-----|------|--------|------|-------|");
 				foreach (var set in problemSets)
 				{
+					int easySolved = 0, easyTotal = 0;
+					int mediumSolved = 0, mediumTotal = 0;
+					int hardSolved = 0, hardTotal = 0;
+
+					foreach (int p in set.Problems)
+					{
+						bool solved = solvedNumbers.Contains(p);
+						switch (difficultyByNumber.GetValueOrDefault(p))
+						{
+							case "Easy":
+								easyTotal++;
+								if (solved) easySolved++;
+								break;
+							case "Medium":
+								mediumTotal++;
+								if (solved) mediumSolved++;
+								break;
+							case "Hard":
+								hardTotal++;
+								if (solved) hardSolved++;
+								break;
+						}
+					}
+
 					int setSolved = set.Problems.Count(p => solvedNumbers.Contains(p));
-					summaryBlock.Add($"| {set.Emoji} {set.Name} | {setSolved} / {set.Problems.Count} |");
+					summaryBlock.Add($"| {set.Emoji} {set.Name} | {easySolved} / {easyTotal} | {mediumSolved} / {mediumTotal} | {hardSolved} / {hardTotal} | {setSolved} / {set.Problems.Count} |");
 				}
 			}
 
@@ -198,6 +223,44 @@ namespace BeetCode.Framework
 			}
 
 			return solved;
+		}
+
+		private static Dictionary<int, string> GetDifficultyByNumber()
+		{
+			var result = new Dictionary<int, string>();
+
+			// Primary source: the LeetCode data cache, which covers problems
+			// whether or not they've been scaffolded yet.
+			string problemsDir = ResetHelper.FindProblemsDirectory();
+			if (problemsDir != null)
+			{
+				string cachePath = Path.Combine(Path.GetDirectoryName(problemsDir)!, "Framework", "leetcode_data.json");
+				if (File.Exists(cachePath))
+				{
+					using var doc = JsonDocument.Parse(File.ReadAllText(cachePath));
+					foreach (var item in doc.RootElement.EnumerateArray())
+					{
+						var question = item.GetProperty("data").GetProperty("question");
+						if (int.TryParse(question.GetProperty("questionFrontendId").GetString(), out int number))
+							result[number] = question.GetProperty("difficulty").GetString() ?? "";
+					}
+				}
+			}
+
+			// Fallback/override: scaffolded Problem classes, in case a problem
+			// isn't present in the cache (e.g. a custom, non-LeetCode problem).
+			var problemTypes = Assembly.GetExecutingAssembly()
+				.GetTypes()
+				.Where(t => t.IsSubclassOf(typeof(Problem)) && !t.IsAbstract);
+
+			foreach (var type in problemTypes)
+			{
+				var problem = (Problem)Activator.CreateInstance(type);
+				if (!result.ContainsKey(problem.Number))
+					result[problem.Number] = problem.Difficulty;
+			}
+
+			return result;
 		}
 
 		private static string StripTrailingEmojis(string title, HashSet<string> knownEmojis)

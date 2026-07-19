@@ -149,9 +149,9 @@ MIT License - Practice away! 🚀
 
 **Total Solved: 21**
 
-| Set | Progress |
-|-----|----------|
-| 🅱️ Blind 150 | 20 / 148 |
+| Set | Easy | Medium | Hard | Total |
+|-----|------|--------|------|-------|
+| 🅱️ Blind 150 | 20 / 28 | 0 / 100 | 0 / 20 | 20 / 148 |
 
 ---
 
