@@ -147,15 +147,15 @@ MIT License - Practice away! 🚀
 
 ## Progress Summary
 
-**Total Solved: 21**
+**Total Solved: 22**
 
 | Set | Easy | Medium | Hard | Total |
 |-----|------|--------|------|-------|
-| 🅱️ Blind 150 | 20 / 28 | 0 / 100 | 0 / 20 | 20 / 148 |
+| 🅱️ Blind 150 | 21 / 28 | 0 / 100 | 0 / 20 | 21 / 148 |
 
 ---
 
-## 🟢 Easy (42 problems — 21 / 42)
+## 🟢 Easy (42 problems — 22 / 42)
 
 ### Arrays & Hashing
 ✅ 217 · Contains Duplicate 🅱️
@@ -231,7 +231,7 @@ MIT License - Practice away! 🚀
 🔲 252 · Meeting Rooms *(Premium)* 🅱️
 
 ### Math & Geometry
-🔲 202 · Happy Number 🅱️
+✅ 202 · Happy Number 🅱️
 
 🔲 66 · Plus One 🅱️
 
