@@ -77,8 +77,23 @@ namespace BeetCode.Problems
             // YOUR SOLUTION GOES HERE
             public bool IsHappy(int n)
             {
-                // TODO: Implement your solution
-                throw new NotImplementedException();
+                HashSet<int> prev = new HashSet<int>();
+                int total = 0;
+                int val = 0;
+
+                while(prev.Add(n))
+                {
+                    total = 0;
+                    while(n > 0)
+                    {
+                        val = n % 10;
+                        total += val * val;
+                        n /= 10;
+                    }
+                    if(total == 1) return true;
+                    n = total;
+                }
+                return false;
             }
         }
     }
